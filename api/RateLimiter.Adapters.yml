@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Adapters
+  commentId: N:RateLimiter.Adapters
+  id: RateLimiter.Adapters
+  children:
+  - RateLimiter.Adapters.IRateLimiterAdapter
+  - RateLimiter.Adapters.TokenBucketAdapter
+  - RateLimiter.Adapters.UniversalRateLimiterAdapter
+  langs:
+  - csharp
+  - vb
+  name: RateLimiter.Adapters
+  nameWithType: RateLimiter.Adapters
+  fullName: RateLimiter.Adapters
+  type: Namespace
+  assemblies:
+  - RateLimiter
+references:
+- uid: RateLimiter.Adapters.IRateLimiterAdapter
+  commentId: T:RateLimiter.Adapters.IRateLimiterAdapter
+  parent: RateLimiter.Adapters
+  href: RateLimiter.Adapters.IRateLimiterAdapter.html
+  name: IRateLimiterAdapter
+  nameWithType: IRateLimiterAdapter
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter
+- uid: RateLimiter.Adapters.TokenBucketAdapter
+  commentId: T:RateLimiter.Adapters.TokenBucketAdapter
+  href: RateLimiter.Adapters.TokenBucketAdapter.html
+  name: TokenBucketAdapter
+  nameWithType: TokenBucketAdapter
+  fullName: RateLimiter.Adapters.TokenBucketAdapter
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter
+  commentId: T:RateLimiter.Adapters.UniversalRateLimiterAdapter
+  href: RateLimiter.Adapters.UniversalRateLimiterAdapter.html
+  name: UniversalRateLimiterAdapter
+  nameWithType: UniversalRateLimiterAdapter
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter
+- uid: RateLimiter.Adapters
+  commentId: N:RateLimiter.Adapters
+  href: RateLimiter.html
+  name: RateLimiter.Adapters
+  nameWithType: RateLimiter.Adapters
+  fullName: RateLimiter.Adapters
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Adapters
+    name: Adapters
+    href: RateLimiter.Adapters.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Adapters
+    name: Adapters
+    href: RateLimiter.Adapters.html

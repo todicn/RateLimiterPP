@@ -1,0 +1,141 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Services.RateLimiterStrategyType
+  commentId: T:RateLimiter.Services.RateLimiterStrategyType
+  id: RateLimiterStrategyType
+  parent: RateLimiter.Services
+  children:
+  - RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  - RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  - RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  langs:
+  - csharp
+  - vb
+  name: RateLimiterStrategyType
+  nameWithType: RateLimiterStrategyType
+  fullName: RateLimiter.Services.RateLimiterStrategyType
+  type: Enum
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: RateLimiterStrategyType
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 62
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  summary: Enumeration of available rate limiting strategy types.
+  example: []
+  syntax:
+    content: public enum RateLimiterStrategyType
+    content.vb: Public Enum RateLimiterStrategyType
+- uid: RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  commentId: F:RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  id: TokenBucket
+  parent: RateLimiter.Services.RateLimiterStrategyType
+  langs:
+  - csharp
+  - vb
+  name: TokenBucket
+  nameWithType: RateLimiterStrategyType.TokenBucket
+  fullName: RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  type: Field
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: TokenBucket
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 64
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  syntax:
+    content: TokenBucket = 0
+    return:
+      type: RateLimiter.Services.RateLimiterStrategyType
+- uid: RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  commentId: F:RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  id: FixedWindow
+  parent: RateLimiter.Services.RateLimiterStrategyType
+  langs:
+  - csharp
+  - vb
+  name: FixedWindow
+  nameWithType: RateLimiterStrategyType.FixedWindow
+  fullName: RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  type: Field
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: FixedWindow
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 65
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  syntax:
+    content: FixedWindow = 1
+    return:
+      type: RateLimiter.Services.RateLimiterStrategyType
+- uid: RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  commentId: F:RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  id: SlidingWindow
+  parent: RateLimiter.Services.RateLimiterStrategyType
+  langs:
+  - csharp
+  - vb
+  name: SlidingWindow
+  nameWithType: RateLimiterStrategyType.SlidingWindow
+  fullName: RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  type: Field
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: SlidingWindow
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 66
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  syntax:
+    content: SlidingWindow = 2
+    return:
+      type: RateLimiter.Services.RateLimiterStrategyType
+references:
+- uid: RateLimiter.Services
+  commentId: N:RateLimiter.Services
+  href: RateLimiter.html
+  name: RateLimiter.Services
+  nameWithType: RateLimiter.Services
+  fullName: RateLimiter.Services
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Services
+    name: Services
+    href: RateLimiter.Services.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Services
+    name: Services
+    href: RateLimiter.Services.html
+- uid: RateLimiter.Services.RateLimiterStrategyType
+  commentId: T:RateLimiter.Services.RateLimiterStrategyType
+  parent: RateLimiter.Services
+  href: RateLimiter.Services.RateLimiterStrategyType.html
+  name: RateLimiterStrategyType
+  nameWithType: RateLimiterStrategyType
+  fullName: RateLimiter.Services.RateLimiterStrategyType

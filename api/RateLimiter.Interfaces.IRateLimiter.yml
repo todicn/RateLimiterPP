@@ -1,0 +1,463 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Interfaces.IRateLimiter
+  commentId: T:RateLimiter.Interfaces.IRateLimiter
+  id: IRateLimiter
+  parent: RateLimiter.Interfaces
+  children:
+  - RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  - RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  - RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  - RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IRateLimiter
+  nameWithType: IRateLimiter
+  fullName: RateLimiter.Interfaces.IRateLimiter
+  type: Interface
+  source:
+    remote:
+      path: RateLimiter/Interfaces/IRateLimiter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: IRateLimiter
+    path: RateLimiter/Interfaces/IRateLimiter.cs
+    startLine: 5
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Interfaces
+  summary: Interface for rate limiting implementations
+  example: []
+  syntax:
+    content: public interface IRateLimiter
+    content.vb: Public Interface IRateLimiter
+- uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  id: TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  langs:
+  - csharp
+  - vb
+  name: TryConsumeAsync(int, CancellationToken)
+  nameWithType: IRateLimiter.TryConsumeAsync(int, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Interfaces/IRateLimiter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: TryConsumeAsync
+    path: RateLimiter/Interfaces/IRateLimiter.cs
+    startLine: 13
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Interfaces
+  summary: Attempts to consume the specified number of permits
+  example: []
+  syntax:
+    content: Task<bool> TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    parameters:
+    - id: permits
+      type: System.Int32
+      description: 'Number of permits to consume (default: 1)'
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True if permits were consumed, false if rate limit exceeded
+    content.vb: Function TryConsumeAsync(permits As Integer = 1, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync*
+  nameWithType.vb: IRateLimiter.TryConsumeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  id: GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  langs:
+  - csharp
+  - vb
+  name: GetAvailablePermitsAsync(CancellationToken)
+  nameWithType: IRateLimiter.GetAvailablePermitsAsync(CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Interfaces/IRateLimiter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: GetAvailablePermitsAsync
+    path: RateLimiter/Interfaces/IRateLimiter.cs
+    startLine: 20
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Interfaces
+  summary: Gets the current number of available permits
+  example: []
+  syntax:
+    content: Task<int> GetAvailablePermitsAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: Number of available permits
+    content.vb: Function GetAvailablePermitsAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
+  overload: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync*
+- uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  id: GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  langs:
+  - csharp
+  - vb
+  name: GetWaitTimeAsync(int, CancellationToken)
+  nameWithType: IRateLimiter.GetWaitTimeAsync(int, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Interfaces/IRateLimiter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: GetWaitTimeAsync
+    path: RateLimiter/Interfaces/IRateLimiter.cs
+    startLine: 28
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Interfaces
+  summary: Gets the time to wait before the next permit becomes available
+  example: []
+  syntax:
+    content: Task<TimeSpan> GetWaitTimeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    parameters:
+    - id: permits
+      type: System.Int32
+      description: Number of permits needed
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.TimeSpan}
+      description: Time to wait, or TimeSpan.Zero if permits are available now
+    content.vb: Function GetWaitTimeAsync(permits As Integer = 1, cancellationToken As CancellationToken = Nothing) As Task(Of TimeSpan)
+  overload: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync*
+  nameWithType.vb: IRateLimiter.GetWaitTimeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  id: ResetAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  langs:
+  - csharp
+  - vb
+  name: ResetAsync(CancellationToken)
+  nameWithType: IRateLimiter.ResetAsync(CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Interfaces/IRateLimiter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: ResetAsync
+    path: RateLimiter/Interfaces/IRateLimiter.cs
+    startLine: 34
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Interfaces
+  summary: Resets the rate limiter state
+  example: []
+  syntax:
+    content: Task ResetAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ResetAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: RateLimiter.Interfaces.IRateLimiter.ResetAsync*
+references:
+- uid: RateLimiter.Interfaces
+  commentId: N:RateLimiter.Interfaces
+  href: RateLimiter.html
+  name: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+- uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync*
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  name: TryConsumeAsync
+  nameWithType: IRateLimiter.TryConsumeAsync
+  fullName: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync*
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  name: GetAvailablePermitsAsync
+  nameWithType: IRateLimiter.GetAvailablePermitsAsync
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync*
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetWaitTimeAsync
+  nameWithType: IRateLimiter.GetWaitTimeAsync
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync
+- uid: System.Threading.Tasks.Task{System.TimeSpan}
+  commentId: T:System.Threading.Tasks.Task{System.TimeSpan}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TimeSpan>
+  nameWithType: Task<TimeSpan>
+  fullName: System.Threading.Tasks.Task<System.TimeSpan>
+  nameWithType.vb: Task(Of TimeSpan)
+  fullName.vb: System.Threading.Tasks.Task(Of System.TimeSpan)
+  name.vb: Task(Of TimeSpan)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: )
+- uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync*
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.ResetAsync
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  name: ResetAsync
+  nameWithType: IRateLimiter.ResetAsync
+  fullName: RateLimiter.Interfaces.IRateLimiter.ResetAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

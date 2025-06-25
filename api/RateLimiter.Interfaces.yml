@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Interfaces
+  commentId: N:RateLimiter.Interfaces
+  id: RateLimiter.Interfaces
+  children:
+  - RateLimiter.Interfaces.IRateLimiter
+  langs:
+  - csharp
+  - vb
+  name: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  type: Namespace
+  assemblies:
+  - RateLimiter
+references:
+- uid: RateLimiter.Interfaces.IRateLimiter
+  commentId: T:RateLimiter.Interfaces.IRateLimiter
+  parent: RateLimiter.Interfaces
+  href: RateLimiter.Interfaces.IRateLimiter.html
+  name: IRateLimiter
+  nameWithType: IRateLimiter
+  fullName: RateLimiter.Interfaces.IRateLimiter
+- uid: RateLimiter.Interfaces
+  commentId: N:RateLimiter.Interfaces
+  href: RateLimiter.html
+  name: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html

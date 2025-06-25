@@ -1,0 +1,375 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Adapters.IRateLimiterAdapter
+  commentId: T:RateLimiter.Adapters.IRateLimiterAdapter
+  id: IRateLimiterAdapter
+  parent: RateLimiter.Adapters
+  children:
+  - RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  - RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  - RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  langs:
+  - csharp
+  - vb
+  name: IRateLimiterAdapter
+  nameWithType: IRateLimiterAdapter
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter
+  type: Interface
+  source:
+    remote:
+      path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: IRateLimiterAdapter
+    path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+    startLine: 8
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Adapters
+  summary: >-
+    Adapter interface for bridging between different rate limiter implementations.
+
+    This allows legacy code to work with new strategy implementations.
+  example: []
+  syntax:
+    content: 'public interface IRateLimiterAdapter : IRateLimiter'
+    content.vb: Public Interface IRateLimiterAdapter Inherits IRateLimiter
+  inheritedMembers:
+  - RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  - RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  - RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  - RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  commentId: P:RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  id: StrategyTypeName
+  parent: RateLimiter.Adapters.IRateLimiterAdapter
+  langs:
+  - csharp
+  - vb
+  name: StrategyTypeName
+  nameWithType: IRateLimiterAdapter.StrategyTypeName
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  type: Property
+  source:
+    remote:
+      path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: StrategyTypeName
+    path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+    startLine: 13
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Adapters
+  summary: Gets the underlying strategy type name
+  example: []
+  syntax:
+    content: string StrategyTypeName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property StrategyTypeName As String
+  overload: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName*
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  commentId: M:RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  id: GetDebugInfo
+  parent: RateLimiter.Adapters.IRateLimiterAdapter
+  langs:
+  - csharp
+  - vb
+  name: GetDebugInfo()
+  nameWithType: IRateLimiterAdapter.GetDebugInfo()
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo()
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: GetDebugInfo
+    path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+    startLine: 18
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Adapters
+  summary: Gets additional debugging information specific to the implementation
+  example: []
+  syntax:
+    content: object GetDebugInfo()
+    return:
+      type: System.Object
+    content.vb: Function GetDebugInfo() As Object
+  overload: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo*
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  commentId: M:RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  id: SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  parent: RateLimiter.Adapters.IRateLimiterAdapter
+  langs:
+  - csharp
+  - vb
+  name: SetStrategy(IRateLimiter)
+  nameWithType: IRateLimiterAdapter.SetStrategy(IRateLimiter)
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: SetStrategy
+    path: RateLimiter/Adapters/IRateLimiterAdapter.cs
+    startLine: 24
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Adapters
+  summary: Sets a new underlying strategy (for runtime switching)
+  example: []
+  syntax:
+    content: void SetStrategy(IRateLimiter strategy)
+    parameters:
+    - id: strategy
+      type: RateLimiter.Interfaces.IRateLimiter
+      description: The new strategy to use
+    content.vb: Sub SetStrategy(strategy As IRateLimiter)
+  overload: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy*
+references:
+- uid: RateLimiter.Adapters
+  commentId: N:RateLimiter.Adapters
+  href: RateLimiter.html
+  name: RateLimiter.Adapters
+  nameWithType: RateLimiter.Adapters
+  fullName: RateLimiter.Adapters
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Adapters
+    name: Adapters
+    href: RateLimiter.Adapters.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Adapters
+    name: Adapters
+    href: RateLimiter.Adapters.html
+- uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  name: TryConsumeAsync(int, CancellationToken)
+  nameWithType: IRateLimiter.TryConsumeAsync(int, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IRateLimiter.TryConsumeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+    name: TryConsumeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+    name: TryConsumeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  name: GetAvailablePermitsAsync(CancellationToken)
+  nameWithType: IRateLimiter.GetAvailablePermitsAsync(CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+    name: GetAvailablePermitsAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+    name: GetAvailablePermitsAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetWaitTimeAsync(int, CancellationToken)
+  nameWithType: IRateLimiter.GetWaitTimeAsync(int, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IRateLimiter.GetWaitTimeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetWaitTimeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetWaitTimeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  name: ResetAsync(CancellationToken)
+  nameWithType: IRateLimiter.ResetAsync(CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+    name: ResetAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+    name: ResetAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: RateLimiter.Interfaces.IRateLimiter
+  commentId: T:RateLimiter.Interfaces.IRateLimiter
+  parent: RateLimiter.Interfaces
+  href: RateLimiter.Interfaces.IRateLimiter.html
+  name: IRateLimiter
+  nameWithType: IRateLimiter
+  fullName: RateLimiter.Interfaces.IRateLimiter
+- uid: RateLimiter.Interfaces
+  commentId: N:RateLimiter.Interfaces
+  href: RateLimiter.html
+  name: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName*
+  commentId: Overload:RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  href: RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_StrategyTypeName
+  name: StrategyTypeName
+  nameWithType: IRateLimiterAdapter.StrategyTypeName
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo*
+  commentId: Overload:RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  href: RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_GetDebugInfo
+  name: GetDebugInfo
+  nameWithType: IRateLimiterAdapter.GetDebugInfo
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy*
+  commentId: Overload:RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy
+  href: RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_SetStrategy_RateLimiter_Interfaces_IRateLimiter_
+  name: SetStrategy
+  nameWithType: IRateLimiterAdapter.SetStrategy
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy

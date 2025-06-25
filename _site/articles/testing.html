@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Testing Guide | RateLimiter Library Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Testing Guide | RateLimiter Library Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="testing-guide">Testing Guide</h1>
+
+<p>This guide covers comprehensive testing strategies for the RateLimiter library.</p>
+<h2 id="unit-testing">Unit Testing</h2>
+<h3 id="testing-rate-limiter-algorithms">Testing Rate Limiter Algorithms</h3>
+<h4 id="token-bucket-testing">Token Bucket Testing</h4>
+<pre><code class="lang-csharp">[TestFixture]
+public class TokenBucketStrategyTests
+{
+    private TokenBucketStrategy _rateLimiter;
+    private RateLimiterOptions _options;
+
+    [SetUp]
+    public void Setup()
+    {
+        _options = new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.TokenBucket,
+            Capacity = 10,
+            RefillRate = 5,
+            RefillPeriod = TimeSpan.FromSeconds(1)
+        };
+        _rateLimiter = new TokenBucketStrategy(Options.Create(_options));
+    }
+
+    [Test]
+    public async Task ShouldAllowRequestsUpToCapacity()
+    {
+        // Should allow up to capacity
+        for (int i = 0; i &lt; 10; i++)
+        {
+            Assert.IsTrue(await _rateLimiter.TryConsumeAsync());
+        }
+
+        // Should deny the next request
+        Assert.IsFalse(await _rateLimiter.TryConsumeAsync());
+    }
+
+    [Test]
+    public async Task ShouldRefillTokensOverTime()
+    {
+        // Consume all tokens
+        for (int i = 0; i &lt; 10; i++)
+        {
+            await _rateLimiter.TryConsumeAsync();
+        }
+
+        // Wait for refill
+        await Task.Delay(TimeSpan.FromSeconds(1.1));
+
+        // Should have 5 new tokens (refill rate)
+        for (int i = 0; i &lt; 5; i++)
+        {
+            Assert.IsTrue(await _rateLimiter.TryConsumeAsync(), $&quot;Token {i + 1} should be available&quot;);
+        }
+
+        Assert.IsFalse(await _rateLimiter.TryConsumeAsync(), &quot;No more tokens should be available&quot;);
+    }
+
+    [Test]
+    public async Task ShouldHandleBurstTraffic()
+    {
+        // Allow burst up to capacity
+        var tasks = new List&lt;Task&lt;bool&gt;&gt;();
+        for (int i = 0; i &lt; 15; i++)
+        {
+            tasks.Add(_rateLimiter.TryConsumeAsync());
+        }
+
+        var results = await Task.WhenAll(tasks);
+        var allowed = results.Count(r =&gt; r);
+        var denied = results.Count(r =&gt; !r);
+
+        Assert.AreEqual(10, allowed, &quot;Should allow exactly 10 requests&quot;);
+        Assert.AreEqual(5, denied, &quot;Should deny exactly 5 requests&quot;);
+    }
+
+    [Test]
+    public async Task GetAvailablePermitsAsync_ShouldReturnCorrectCount()
+    {
+        // Initially should have full capacity
+        var available = await _rateLimiter.GetAvailablePermitsAsync();
+        Assert.AreEqual(10, available);
+
+        // After consuming some tokens
+        await _rateLimiter.TryConsumeAsync(3);
+        available = await _rateLimiter.GetAvailablePermitsAsync();
+        Assert.AreEqual(7, available);
+    }
+
+    [Test]
+    public async Task GetWaitTimeAsync_ShouldCalculateCorrectWaitTime()
+    {
+        // Consume all tokens
+        for (int i = 0; i &lt; 10; i++)
+        {
+            await _rateLimiter.TryConsumeAsync();
+        }
+
+        var waitTime = await _rateLimiter.GetWaitTimeAsync();
+        
+        // Should need to wait approximately 1 second for next token
+        Assert.IsTrue(waitTime.TotalMilliseconds &gt; 900 &amp;&amp; waitTime.TotalMilliseconds &lt; 1100,
+            $&quot;Wait time should be ~1000ms, but was {waitTime.TotalMilliseconds}ms&quot;);
+    }
+
+    [Test]
+    public async Task ResetAsync_ShouldRestoreFullCapacity()
+    {
+        // Consume some tokens
+        for (int i = 0; i &lt; 5; i++)
+        {
+            await _rateLimiter.TryConsumeAsync();
+        }
+
+        // Reset should restore full capacity
+        await _rateLimiter.ResetAsync();
+
+        var available = await _rateLimiter.GetAvailablePermitsAsync();
+        Assert.AreEqual(10, available);
+    }
+}
+</code></pre>
+<h4 id="fixed-window-testing">Fixed Window Testing</h4>
+<pre><code class="lang-csharp">[TestFixture]
+public class FixedWindowStrategyTests
+{
+    private FixedWindowStrategy _rateLimiter;
+
+    [SetUp]
+    public void Setup()
+    {
+        var options = new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.FixedWindow,
+            Capacity = 5,
+            WindowSize = TimeSpan.FromSeconds(2)
+        };
+        _rateLimiter = new FixedWindowStrategy(Options.Create(options));
+    }
+
+    [Test]
+    public async Task ShouldAllowRequestsInWindow()
+    {
+        for (int i = 0; i &lt; 5; i++)
+        {
+            Assert.IsTrue(await _rateLimiter.TryConsumeAsync());
+        }
+
+        Assert.IsFalse(await _rateLimiter.TryConsumeAsync());
+    }
+
+    [Test]
+    public async Task ShouldResetAtWindowBoundary()
+    {
+        // Consume all requests in current window
+        for (int i = 0; i &lt; 5; i++)
+        {
+            await _rateLimiter.TryConsumeAsync();
+        }
+
+        // Wait for window to reset
+        await Task.Delay(TimeSpan.FromSeconds(2.1));
+
+        // Should allow requests again
+        Assert.IsTrue(await _rateLimiter.TryConsumeAsync());
+    }
+}
+</code></pre>
+<h4 id="sliding-window-testing">Sliding Window Testing</h4>
+<pre><code class="lang-csharp">[TestFixture]
+public class SlidingWindowStrategyTests
+{
+    private SlidingWindowStrategy _rateLimiter;
+
+    [SetUp]
+    public void Setup()
+    {
+        var options = new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.SlidingWindow,
+            Capacity = 5,
+            WindowSize = TimeSpan.FromSeconds(5)
+        };
+        _rateLimiter = new SlidingWindowStrategy(Options.Create(options));
+    }
+
+    [Test]
+    public async Task ShouldMaintainSlidingWindow()
+    {
+        // Make requests at 1-second intervals
+        for (int i = 0; i &lt; 5; i++)
+        {
+            Assert.IsTrue(await _rateLimiter.TryConsumeAsync());
+            if (i &lt; 4) await Task.Delay(TimeSpan.FromSeconds(1));
+        }
+
+        // Immediate next request should be denied
+        Assert.IsFalse(await _rateLimiter.TryConsumeAsync());
+
+        // Wait 2 seconds (total 6 seconds from first request)
+        await Task.Delay(TimeSpan.FromSeconds(2));
+
+        // First request should have expired from window
+        Assert.IsTrue(await _rateLimiter.TryConsumeAsync());
+    }
+}
+</code></pre>
+<h2 id="concurrency-testing">Concurrency Testing</h2>
+<h3 id="thread-safety-tests">Thread Safety Tests</h3>
+<pre><code class="lang-csharp">[TestFixture]
+public class ConcurrencyTests
+{
+    [Test]
+    public async Task ShouldBehavCorrectlyUnderConcurrentLoad()
+    {
+        var options = Options.Create(new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.TokenBucket,
+            Capacity = 100,
+            RefillRate = 10,
+            RefillPeriod = TimeSpan.FromSeconds(1)
+        });
+
+        var rateLimiter = new TokenBucketStrategy(options);
+        var tasks = new List&lt;Task&lt;bool&gt;&gt;();
+
+        // Simulate 1000 concurrent requests
+        for (int i = 0; i &lt; 1000; i++)
+        {
+            tasks.Add(rateLimiter.TryConsumeAsync());
+        }
+
+        var results = await Task.WhenAll(tasks);
+        var allowed = results.Count(r =&gt; r);
+        var denied = results.Count(r =&gt; !r);
+
+        // Should allow exactly 100 requests (capacity)
+        Assert.AreEqual(100, allowed);
+        Assert.AreEqual(900, denied);
+
+        // Total state should be consistent
+        var available = await rateLimiter.GetAvailablePermitsAsync();
+        Assert.AreEqual(0, available);
+    }
+
+    [Test]
+    public async Task ShouldHandleRaceConditions()
+    {
+        var options = Options.Create(new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.TokenBucket,
+            Capacity = 1,
+            RefillRate = 1,
+            RefillPeriod = TimeSpan.FromSeconds(1)
+        });
+
+        var rateLimiter = new TokenBucketStrategy(options);
+        var successCount = 0;
+
+        // Run many concurrent operations
+        var tasks = Enumerable.Range(0, 100).Select(async _ =&gt;
+        {
+            for (int i = 0; i &lt; 10; i++)
+            {
+                if (await rateLimiter.TryConsumeAsync())
+                {
+                    Interlocked.Increment(ref successCount);
+                }
+                await Task.Delay(10);
+            }
+        });
+
+        await Task.WhenAll(tasks);
+
+        // Success count should be reasonable (allowing for some refill)
+        Assert.IsTrue(successCount &gt; 0 &amp;&amp; successCount &lt; 20, 
+            $&quot;Expected reasonable success count, got {successCount}&quot;);
+    }
+}
+</code></pre>
+<h2 id="integration-testing">Integration Testing</h2>
+<h3 id="aspnet-core-integration">ASP.NET Core Integration</h3>
+<pre><code class="lang-csharp">[TestFixture]
+public class RateLimiterIntegrationTests
+{
+    private WebApplicationFactory&lt;Program&gt; _factory;
+    private HttpClient _client;
+
+    [SetUp]
+    public void Setup()
+    {
+        _factory = new WebApplicationFactory&lt;Program&gt;()
+            .WithWebHostBuilder(builder =&gt;
+            {
+                builder.ConfigureServices(services =&gt;
+                {
+                    services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+                    {
+                        options.Algorithm = RateLimitingAlgorithm.TokenBucket;
+                        options.Capacity = 5;
+                        options.RefillRate = 1;
+                        options.RefillPeriod = TimeSpan.FromSeconds(1);
+                    });
+                    services.AddRateLimiter();
+                });
+
+                builder.Configure(app =&gt;
+                {
+                    app.UseMiddleware&lt;RateLimitingMiddleware&gt;();
+                    app.UseRouting();
+                    app.UseEndpoints(endpoints =&gt;
+                    {
+                        endpoints.MapGet(&quot;/test&quot;, () =&gt; &quot;OK&quot;);
+                    });
+                });
+            });
+
+        _client = _factory.CreateClient();
+    }
+
+    [Test]
+    public async Task ShouldApplyRateLimitingToEndpoints()
+    {
+        var responses = new List&lt;HttpResponseMessage&gt;();
+
+        // Make requests up to limit
+        for (int i = 0; i &lt; 7; i++)
+        {
+            responses.Add(await _client.GetAsync(&quot;/test&quot;));
+        }
+
+        var okResponses = responses.Count(r =&gt; r.StatusCode == HttpStatusCode.OK);
+        var rateLimitedResponses = responses.Count(r =&gt; r.StatusCode == HttpStatusCode.TooManyRequests);
+
+        Assert.AreEqual(5, okResponses, &quot;Should allow 5 requests&quot;);
+        Assert.AreEqual(2, rateLimitedResponses, &quot;Should rate limit 2 requests&quot;);
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        _client?.Dispose();
+        _factory?.Dispose();
+    }
+}
+</code></pre>
+<h3 id="redis-integration-testing">Redis Integration Testing</h3>
+<pre><code class="lang-csharp">[TestFixture]
+public class RedisIntegrationTests
+{
+    private ServiceProvider _serviceProvider;
+    private IRateLimiter _rateLimiter;
+
+    [SetUp]
+    public void Setup()
+    {
+        var services = new ServiceCollection();
+
+        services.AddStackExchangeRedisCache(options =&gt;
+        {
+            options.Configuration = &quot;localhost:6379&quot;;
+        });
+
+        services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+        {
+            options.Algorithm = RateLimitingAlgorithm.TokenBucket;
+            options.Capacity = 10;
+            options.RefillRate = 5;
+            options.RefillPeriod = TimeSpan.FromSeconds(1);
+            options.DistributedCacheKey = &quot;Test:RateLimit&quot;;
+        });
+
+        services.AddRateLimiter();
+
+        _serviceProvider = services.BuildServiceProvider();
+        _rateLimiter = _serviceProvider.GetRequiredService&lt;IRateLimiter&gt;();
+    }
+
+    [Test]
+    public async Task ShouldPersistStateInRedis()
+    {
+        // Consume some permits
+        for (int i = 0; i &lt; 5; i++)
+        {
+            await _rateLimiter.TryConsumeAsync();
+        }
+
+        // Create new rate limiter instance (simulating app restart)
+        var newRateLimiter = _serviceProvider.GetRequiredService&lt;IRateLimiter&gt;();
+
+        // Should maintain state from Redis
+        var available = await newRateLimiter.GetAvailablePermitsAsync();
+        Assert.AreEqual(5, available);
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        _serviceProvider?.Dispose();
+    }
+}
+</code></pre>
+<h2 id="performance-testing">Performance Testing</h2>
+<h3 id="benchmark-testing">Benchmark Testing</h3>
+<pre><code class="lang-csharp">[MemoryDiagnoser]
+[SimpleJob(RuntimeMoniker.Net80)]
+public class RateLimiterBenchmarks
+{
+    private TokenBucketStrategy _tokenBucket;
+    private FixedWindowStrategy _fixedWindow;
+    private SlidingWindowStrategy _slidingWindow;
+
+    [GlobalSetup]
+    public void Setup()
+    {
+        var tokenBucketOptions = Options.Create(new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.TokenBucket,
+            Capacity = 1000,
+            RefillRate = 100,
+            RefillPeriod = TimeSpan.FromSeconds(1)
+        });
+
+        var fixedWindowOptions = Options.Create(new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.FixedWindow,
+            Capacity = 1000,
+            WindowSize = TimeSpan.FromSeconds(10)
+        });
+
+        var slidingWindowOptions = Options.Create(new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.SlidingWindow,
+            Capacity = 1000,
+            WindowSize = TimeSpan.FromSeconds(10)
+        });
+
+        _tokenBucket = new TokenBucketStrategy(tokenBucketOptions);
+        _fixedWindow = new FixedWindowStrategy(fixedWindowOptions);
+        _slidingWindow = new SlidingWindowStrategy(slidingWindowOptions);
+    }
+
+    [Benchmark]
+    public async Task&lt;bool&gt; TokenBucket_TryConsume()
+    {
+        return await _tokenBucket.TryConsumeAsync();
+    }
+
+    [Benchmark]
+    public async Task&lt;bool&gt; FixedWindow_TryConsume()
+    {
+        return await _fixedWindow.TryConsumeAsync();
+    }
+
+    [Benchmark]
+    public async Task&lt;bool&gt; SlidingWindow_TryConsume()
+    {
+        return await _slidingWindow.TryConsumeAsync();
+    }
+}
+</code></pre>
+<h3 id="load-testing">Load Testing</h3>
+<pre><code class="lang-csharp">[TestFixture]
+public class LoadTests
+{
+    [Test]
+    public async Task ShouldHandleHighThroughput()
+    {
+        var options = Options.Create(new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.TokenBucket,
+            Capacity = 10000,
+            RefillRate = 1000,
+            RefillPeriod = TimeSpan.FromSeconds(1)
+        });
+
+        var rateLimiter = new TokenBucketStrategy(options);
+        var stopwatch = Stopwatch.StartNew();
+        var totalRequests = 100000;
+        var allowedRequests = 0;
+
+        var tasks = Enumerable.Range(0, totalRequests).Select(async _ =&gt;
+        {
+            if (await rateLimiter.TryConsumeAsync())
+            {
+                Interlocked.Increment(ref allowedRequests);
+            }
+        });
+
+        await Task.WhenAll(tasks);
+        stopwatch.Stop();
+
+        var throughput = totalRequests / stopwatch.Elapsed.TotalSeconds;
+
+        Console.WriteLine($&quot;Processed {totalRequests:N0} requests in {stopwatch.ElapsedMilliseconds:N0}ms&quot;);
+        Console.WriteLine($&quot;Throughput: {throughput:N0} requests/second&quot;);
+        Console.WriteLine($&quot;Allowed: {allowedRequests:N0} ({(double)allowedRequests/totalRequests:P2})&quot;);
+
+        Assert.IsTrue(throughput &gt; 10000, $&quot;Throughput should be &gt; 10,000 req/s, was {throughput:F0}&quot;);
+    }
+}
+</code></pre>
+<h2 id="test-helpers-and-utilities">Test Helpers and Utilities</h2>
+<h3 id="time-mocking">Time Mocking</h3>
+<pre><code class="lang-csharp">public interface ITimeProvider
+{
+    DateTime UtcNow { get; }
+}
+
+public class SystemTimeProvider : ITimeProvider
+{
+    public DateTime UtcNow =&gt; DateTime.UtcNow;
+}
+
+public class MockTimeProvider : ITimeProvider
+{
+    public DateTime UtcNow { get; set; } = DateTime.UtcNow;
+
+    public void Advance(TimeSpan timeSpan)
+    {
+        UtcNow = UtcNow.Add(timeSpan);
+    }
+}
+
+// In your tests
+[Test]
+public async Task ShouldRefillAfterTimePasses()
+{
+    var mockTime = new MockTimeProvider();
+    var rateLimiter = new TokenBucketStrategy(options, mockTime);
+
+    // Consume all tokens
+    for (int i = 0; i &lt; 10; i++)
+    {
+        await rateLimiter.TryConsumeAsync();
+    }
+
+    // Advance time
+    mockTime.Advance(TimeSpan.FromSeconds(1));
+
+    // Should have new tokens
+    Assert.IsTrue(await rateLimiter.TryConsumeAsync());
+}
+</code></pre>
+<h3 id="test-data-builders">Test Data Builders</h3>
+<pre><code class="lang-csharp">public class RateLimiterOptionsBuilder
+{
+    private readonly RateLimiterOptions _options = new();
+
+    public RateLimiterOptionsBuilder WithTokenBucket(int capacity, double refillRate, TimeSpan refillPeriod)
+    {
+        _options.Algorithm = RateLimitingAlgorithm.TokenBucket;
+        _options.Capacity = capacity;
+        _options.RefillRate = refillRate;
+        _options.RefillPeriod = refillPeriod;
+        return this;
+    }
+
+    public RateLimiterOptionsBuilder WithFixedWindow(int capacity, TimeSpan windowSize)
+    {
+        _options.Algorithm = RateLimitingAlgorithm.FixedWindow;
+        _options.Capacity = capacity;
+        _options.WindowSize = windowSize;
+        return this;
+    }
+
+    public RateLimiterOptions Build() =&gt; _options;
+}
+
+// Usage in tests
+var options = new RateLimiterOptionsBuilder()
+    .WithTokenBucket(capacity: 100, refillRate: 10, refillPeriod: TimeSpan.FromSeconds(1))
+    .Build();
+</code></pre>
+<h2 id="testing-best-practices">Testing Best Practices</h2>
+<ol>
+<li><strong>Test All Algorithms</strong>: Ensure each rate limiting algorithm is thoroughly tested</li>
+<li><strong>Test Concurrency</strong>: Verify thread safety under load</li>
+<li><strong>Test Time Boundaries</strong>: Test behavior at window boundaries and during refill periods</li>
+<li><strong>Test Error Conditions</strong>: Verify behavior when dependencies fail</li>
+<li><strong>Performance Testing</strong>: Benchmark different algorithms and configurations</li>
+<li><strong>Integration Testing</strong>: Test the full stack including middleware and DI</li>
+<li><strong>Use Deterministic Time</strong>: Mock time providers for predictable tests</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/todicn/RateLimiterPP/blob/cursor/build-xml-and-documentation-with-dotfx-2e95/articles/testing.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      RateLimiter Library - High-performance rate limiting for .NET applications
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Configuration
+  commentId: N:RateLimiter.Configuration
+  id: RateLimiter.Configuration
+  children:
+  - RateLimiter.Configuration.FixedWindowOptions
+  - RateLimiter.Configuration.RateLimiterOptions
+  - RateLimiter.Configuration.SlidingWindowOptions
+  - RateLimiter.Configuration.TokenBucketOptions
+  langs:
+  - csharp
+  - vb
+  name: RateLimiter.Configuration
+  nameWithType: RateLimiter.Configuration
+  fullName: RateLimiter.Configuration
+  type: Namespace
+  assemblies:
+  - RateLimiter
+references:
+- uid: RateLimiter.Configuration.RateLimiterOptions
+  commentId: T:RateLimiter.Configuration.RateLimiterOptions
+  href: RateLimiter.Configuration.RateLimiterOptions.html
+  name: RateLimiterOptions
+  nameWithType: RateLimiterOptions
+  fullName: RateLimiter.Configuration.RateLimiterOptions
+- uid: RateLimiter.Configuration.TokenBucketOptions
+  commentId: T:RateLimiter.Configuration.TokenBucketOptions
+  parent: RateLimiter.Configuration
+  href: RateLimiter.Configuration.TokenBucketOptions.html
+  name: TokenBucketOptions
+  nameWithType: TokenBucketOptions
+  fullName: RateLimiter.Configuration.TokenBucketOptions
+- uid: RateLimiter.Configuration.FixedWindowOptions
+  commentId: T:RateLimiter.Configuration.FixedWindowOptions
+  parent: RateLimiter.Configuration
+  href: RateLimiter.Configuration.FixedWindowOptions.html
+  name: FixedWindowOptions
+  nameWithType: FixedWindowOptions
+  fullName: RateLimiter.Configuration.FixedWindowOptions
+- uid: RateLimiter.Configuration.SlidingWindowOptions
+  commentId: T:RateLimiter.Configuration.SlidingWindowOptions
+  parent: RateLimiter.Configuration
+  href: RateLimiter.Configuration.SlidingWindowOptions.html
+  name: SlidingWindowOptions
+  nameWithType: SlidingWindowOptions
+  fullName: RateLimiter.Configuration.SlidingWindowOptions
+- uid: RateLimiter.Configuration
+  commentId: N:RateLimiter.Configuration
+  href: RateLimiter.html
+  name: RateLimiter.Configuration
+  nameWithType: RateLimiter.Configuration
+  fullName: RateLimiter.Configuration
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Configuration
+    name: Configuration
+    href: RateLimiter.Configuration.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Configuration
+    name: Configuration
+    href: RateLimiter.Configuration.html
