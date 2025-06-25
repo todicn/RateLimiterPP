@@ -1,0 +1,75 @@
+# Cursor Rules for RateLimiter Project
+
+## Project Context
+This is a C# rate limiting library implementing multiple algorithms (Token Bucket, Fixed Window, Sliding Window) using Strategy and Adapter patterns. It's designed for Shopify pair programming interviews.
+
+## Code Style & Standards
+- Follow C# naming conventions (PascalCase for classes/methods, camelCase for fields)
+- Use explicit type declarations where helpful for readability
+- Prefer async/await patterns for all public APIs
+- Use nullable reference types and handle null cases properly
+- Write XML documentation comments for public APIs
+
+## Architecture Patterns
+- **Strategy Pattern**: For switching between rate limiting algorithms at runtime
+- **Adapter Pattern**: For backward compatibility with legacy interfaces
+- **Factory Pattern**: For creating rate limiter instances
+- **Options Pattern**: For configuration management via IOptions<T>
+- **Dependency Injection**: Use Microsoft.Extensions.DependencyInjection
+
+## Testing Guidelines
+- Write unit tests for all public methods
+- Use xUnit framework with async test patterns
+- Mock external dependencies using interfaces
+- Test edge cases and error conditions
+- Maintain high test coverage for critical paths
+
+## Performance Considerations
+- All rate limiter implementations must be thread-safe
+- Use efficient data structures (arrays for sliding window)
+- Minimize memory allocations in hot paths
+- Consider using Stopwatch for high-precision timing
+- Profile memory usage for long-running scenarios
+
+## Error Handling
+- Validate input parameters and throw ArgumentException for invalid values
+- Use descriptive error messages that help developers
+- Handle edge cases gracefully (time drift, system clock changes)
+- Log important events for debugging and monitoring
+
+## GitHub Integration
+- Use conventional commit messages for clear history
+- Create meaningful PR descriptions with architecture explanations
+- Tag commits with relevant issue numbers when applicable
+- Maintain clean commit history with logical groupings
+
+## Interview Focus Areas
+- Explain algorithm trade-offs (memory vs accuracy, burst handling)
+- Discuss distributed systems challenges (Redis coordination, consistency)
+- Cover thread safety and concurrent access patterns
+- Compare different rate limiting strategies and their use cases
+- Demonstrate testing strategies for time-based algorithms
+
+## Code Review Checklist
+- [ ] Thread safety verified with lock analysis
+- [ ] Unit tests cover happy path and edge cases
+- [ ] XML documentation updated for public APIs
+- [ ] Performance impact considered for high-throughput scenarios
+- [ ] Configuration options properly validated
+- [ ] Error messages are clear and actionable
+
+## Preferred Libraries
+- Microsoft.Extensions.* for DI, configuration, and options
+- StackExchange.Redis for distributed scenarios
+- xUnit for testing framework
+- System.Diagnostics.Stopwatch for timing
+- Avoid external rate limiting libraries (implement from scratch)
+
+## File Organization
+- Keep interfaces in `Interfaces/` folder
+- Implementations in `Implementations/` folder
+- Services and patterns in `Services/` folder
+- Configuration in `Configuration/` folder
+- Tests mirror the main project structure
+
+When suggesting code changes, always consider the educational value for interview discussions and ensure the implementation demonstrates solid understanding of design patterns and concurrent programming. 
