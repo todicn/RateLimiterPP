@@ -1,0 +1,1079 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Implementations.TokenBucketStrategy
+  commentId: T:RateLimiter.Implementations.TokenBucketStrategy
+  id: TokenBucketStrategy
+  parent: RateLimiter.Implementations
+  children:
+  - RateLimiter.Implementations.TokenBucketStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  - RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  - RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  - RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  - RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  - RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: TokenBucketStrategy
+  nameWithType: TokenBucketStrategy
+  fullName: RateLimiter.Implementations.TokenBucketStrategy
+  type: Class
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: TokenBucketStrategy
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 13
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  summary: >-
+    Token bucket rate limiter strategy implementation.
+
+
+    The token bucket algorithm allows for bursty traffic while maintaining
+
+    an average rate limit. Tokens are added to a bucket at a fixed rate.
+  example: []
+  syntax:
+    content: 'public class TokenBucketStrategy : IRateLimiter'
+    content.vb: Public Class TokenBucketStrategy Implements IRateLimiter
+  inheritance:
+  - System.Object
+  implements:
+  - RateLimiter.Interfaces.IRateLimiter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RateLimiter.Implementations.TokenBucketStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  id: '#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})'
+  parent: RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: TokenBucketStrategy(IOptions<RateLimiterOptions>)
+  nameWithType: TokenBucketStrategy.TokenBucketStrategy(IOptions<RateLimiterOptions>)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TokenBucketStrategy(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  type: Constructor
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: .ctor
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 21
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  syntax:
+    content: public TokenBucketStrategy(IOptions<RateLimiterOptions> options)
+    parameters:
+    - id: options
+      type: Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions}
+    content.vb: Public Sub New(options As IOptions(Of RateLimiterOptions))
+  overload: RateLimiter.Implementations.TokenBucketStrategy.#ctor*
+  nameWithType.vb: TokenBucketStrategy.New(IOptions(Of RateLimiterOptions))
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  name.vb: New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  id: TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: TryConsumeAsync(int, CancellationToken)
+  nameWithType: TokenBucketStrategy.TryConsumeAsync(int, CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: TryConsumeAsync
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 28
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  summary: Attempts to consume the specified number of permits
+  example: []
+  syntax:
+    content: public Task<bool> TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    parameters:
+    - id: permits
+      type: System.Int32
+      description: 'Number of permits to consume (default: 1)'
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True if permits were consumed, false if rate limit exceeded
+    content.vb: Public Function TryConsumeAsync(permits As Integer = 1, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync*
+  implements:
+  - RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  nameWithType.vb: TokenBucketStrategy.TryConsumeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  id: GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetAvailablePermitsAsync(CancellationToken)
+  nameWithType: TokenBucketStrategy.GetAvailablePermitsAsync(CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: GetAvailablePermitsAsync
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 47
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  summary: Gets the current number of available permits
+  example: []
+  syntax:
+    content: public Task<int> GetAvailablePermitsAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: Number of available permits
+    content.vb: Public Function GetAvailablePermitsAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
+  overload: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync*
+  implements:
+  - RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  id: GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetWaitTimeAsync(int, CancellationToken)
+  nameWithType: TokenBucketStrategy.GetWaitTimeAsync(int, CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: GetWaitTimeAsync
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 56
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  summary: Gets the time to wait before the next permit becomes available
+  example: []
+  syntax:
+    content: public Task<TimeSpan> GetWaitTimeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    parameters:
+    - id: permits
+      type: System.Int32
+      description: Number of permits needed
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task{System.TimeSpan}
+      description: Time to wait, or TimeSpan.Zero if permits are available now
+    content.vb: Public Function GetWaitTimeAsync(permits As Integer = 1, cancellationToken As CancellationToken = Nothing) As Task(Of TimeSpan)
+  overload: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync*
+  implements:
+  - RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  nameWithType.vb: TokenBucketStrategy.GetWaitTimeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  id: ResetAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: ResetAsync(CancellationToken)
+  nameWithType: TokenBucketStrategy.ResetAsync(CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: ResetAsync
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 74
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  summary: Resets the rate limiter state
+  example: []
+  syntax:
+    content: public Task ResetAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ResetAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync*
+  implements:
+  - RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  commentId: P:RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  id: CurrentTokens
+  parent: RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: CurrentTokens
+  nameWithType: TokenBucketStrategy.CurrentTokens
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  type: Property
+  source:
+    remote:
+      path: RateLimiter/Implementations/TokenBucketStrategy.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: CurrentTokens
+    path: RateLimiter/Implementations/TokenBucketStrategy.cs
+    startLine: 104
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Implementations
+  summary: Gets the current token count (for testing/debugging purposes)
+  example: []
+  syntax:
+    content: public double CurrentTokens { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property CurrentTokens As Double
+  overload: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens*
+references:
+- uid: RateLimiter.Implementations
+  commentId: N:RateLimiter.Implementations
+  href: RateLimiter.html
+  name: RateLimiter.Implementations
+  nameWithType: RateLimiter.Implementations
+  fullName: RateLimiter.Implementations
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Implementations
+    name: Implementations
+    href: RateLimiter.Implementations.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Implementations
+    name: Implementations
+    href: RateLimiter.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: RateLimiter.Interfaces.IRateLimiter
+  commentId: T:RateLimiter.Interfaces.IRateLimiter
+  parent: RateLimiter.Interfaces
+  href: RateLimiter.Interfaces.IRateLimiter.html
+  name: IRateLimiter
+  nameWithType: IRateLimiter
+  fullName: RateLimiter.Interfaces.IRateLimiter
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RateLimiter.Interfaces
+  commentId: N:RateLimiter.Interfaces
+  href: RateLimiter.html
+  name: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+- uid: RateLimiter.Implementations.TokenBucketStrategy.#ctor*
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.#ctor
+  href: RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  name: TokenBucketStrategy
+  nameWithType: TokenBucketStrategy.TokenBucketStrategy
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TokenBucketStrategy
+  nameWithType.vb: TokenBucketStrategy.New
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.New
+  name.vb: New
+- uid: Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions}
+  commentId: T:Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<RateLimiterOptions>
+  nameWithType: IOptions<RateLimiterOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>
+  nameWithType.vb: IOptions(Of RateLimiterOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions)
+  name.vb: IOptions(Of RateLimiterOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: RateLimiter.Configuration.RateLimiterOptions
+    name: RateLimiterOptions
+    href: RateLimiter.Configuration.RateLimiterOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RateLimiter.Configuration.RateLimiterOptions
+    name: RateLimiterOptions
+    href: RateLimiter.Configuration.RateLimiterOptions.html
+  - name: )
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync*
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync
+  href: RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  name: TryConsumeAsync
+  nameWithType: TokenBucketStrategy.TryConsumeAsync
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  name: TryConsumeAsync(int, CancellationToken)
+  nameWithType: IRateLimiter.TryConsumeAsync(int, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IRateLimiter.TryConsumeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+    name: TryConsumeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+    name: TryConsumeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync*
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync
+  href: RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  name: GetAvailablePermitsAsync
+  nameWithType: TokenBucketStrategy.GetAvailablePermitsAsync
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  name: GetAvailablePermitsAsync(CancellationToken)
+  nameWithType: IRateLimiter.GetAvailablePermitsAsync(CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+    name: GetAvailablePermitsAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+    name: GetAvailablePermitsAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync*
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync
+  href: RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetWaitTimeAsync
+  nameWithType: TokenBucketStrategy.GetWaitTimeAsync
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  name: GetWaitTimeAsync(int, CancellationToken)
+  nameWithType: IRateLimiter.GetWaitTimeAsync(int, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  nameWithType.vb: IRateLimiter.GetWaitTimeAsync(Integer, CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetWaitTimeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+    name: GetWaitTimeAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.TimeSpan}
+  commentId: T:System.Threading.Tasks.Task{System.TimeSpan}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TimeSpan>
+  nameWithType: Task<TimeSpan>
+  fullName: System.Threading.Tasks.Task<System.TimeSpan>
+  nameWithType.vb: Task(Of TimeSpan)
+  fullName.vb: System.Threading.Tasks.Task(Of System.TimeSpan)
+  name.vb: Task(Of TimeSpan)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: )
+- uid: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync*
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.ResetAsync
+  href: RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_ResetAsync_System_Threading_CancellationToken_
+  name: ResetAsync
+  nameWithType: TokenBucketStrategy.ResetAsync
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  parent: RateLimiter.Interfaces.IRateLimiter
+  isExternal: true
+  href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  name: ResetAsync(CancellationToken)
+  nameWithType: IRateLimiter.ResetAsync(CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+    name: ResetAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+    name: ResetAsync
+    href: RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens*
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  href: RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_CurrentTokens
+  name: CurrentTokens
+  nameWithType: TokenBucketStrategy.CurrentTokens
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

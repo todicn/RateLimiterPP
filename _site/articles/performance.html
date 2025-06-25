@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Performance Considerations | RateLimiter Library Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Performance Considerations | RateLimiter Library Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="performance-considerations">Performance Considerations</h1>
+
+<p>This guide covers performance optimization strategies when using the RateLimiter library.</p>
+<h2 id="algorithm-performance-comparison">Algorithm Performance Comparison</h2>
+<h3 id="token-bucket">Token Bucket</h3>
+<ul>
+<li><strong>Memory Usage</strong>: Low (constant memory per instance)</li>
+<li><strong>CPU Usage</strong>: Very low (simple arithmetic operations)</li>
+<li><strong>Accuracy</strong>: High</li>
+<li><strong>Burst Handling</strong>: Excellent (designed for bursts)</li>
+<li><strong>Best For</strong>: APIs that can handle burst traffic</li>
+</ul>
+<h3 id="fixed-window">Fixed Window</h3>
+<ul>
+<li><strong>Memory Usage</strong>: Very low (just a counter and timestamp)</li>
+<li><strong>CPU Usage</strong>: Very low (minimal operations)</li>
+<li><strong>Accuracy</strong>: Good (window boundary issues)</li>
+<li><strong>Burst Handling</strong>: Poor (can allow 2x capacity at boundaries)</li>
+<li><strong>Best For</strong>: Simple rate limiting with minimal overhead</li>
+</ul>
+<h3 id="sliding-window">Sliding Window</h3>
+<ul>
+<li><strong>Memory Usage</strong>: High (stores individual request timestamps)</li>
+<li><strong>CPU Usage</strong>: Higher (must clean up expired entries)</li>
+<li><strong>Accuracy</strong>: Excellent (most precise)</li>
+<li><strong>Burst Handling</strong>: Good (smooth distribution)</li>
+<li><strong>Best For</strong>: Strict rate limiting requirements</li>
+</ul>
+<h2 id="optimization-strategies">Optimization Strategies</h2>
+<h3 id="1-choose-the-right-algorithm">1. Choose the Right Algorithm</h3>
+<pre><code class="lang-csharp">// For high-throughput scenarios with burst tolerance
+services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+{
+    options.Algorithm = RateLimitingAlgorithm.TokenBucket;
+    options.Capacity = 1000;
+    options.RefillRate = 100;
+    options.RefillPeriod = TimeSpan.FromSeconds(1);
+});
+
+// For minimal memory usage
+services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+{
+    options.Algorithm = RateLimitingAlgorithm.FixedWindow;
+    options.Capacity = 100;
+    options.WindowSize = TimeSpan.FromMinutes(1);
+});
+
+// For strict accuracy requirements
+services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+{
+    options.Algorithm = RateLimitingAlgorithm.SlidingWindow;
+    options.Capacity = 100;
+    options.WindowSize = TimeSpan.FromMinutes(1);
+});
+</code></pre>
+<h3 id="2-minimize-lock-contention">2. Minimize Lock Contention</h3>
+<p>The library uses optimized locking strategies, but you can help by:</p>
+<pre><code class="lang-csharp">// Use separate rate limiters for different operations
+public class OptimizedService
+{
+    private readonly IRateLimiter _readLimiter;
+    private readonly IRateLimiter _writeLimiter;
+
+    public OptimizedService(IRateLimiterFactory factory)
+    {
+        _readLimiter = factory.CreateRateLimiter(&quot;ReadOperations&quot;);
+        _writeLimiter = factory.CreateRateLimiter(&quot;WriteOperations&quot;);
+    }
+
+    // This avoids contention between read and write operations
+}
+</code></pre>
+<h3 id="3-batch-operations-when-possible">3. Batch Operations When Possible</h3>
+<pre><code class="lang-csharp">public async Task&lt;bool&gt; ProcessBatchAsync(int itemCount)
+{
+    // Try to consume permits for the entire batch at once
+    if (await _rateLimiter.TryConsumeAsync(itemCount))
+    {
+        // Process all items
+        return true;
+    }
+
+    // Fallback: check available permits and process what we can
+    var available = await _rateLimiter.GetAvailablePermitsAsync();
+    if (available &gt; 0)
+    {
+        await _rateLimiter.TryConsumeAsync(available);
+        // Process 'available' number of items
+        return false; // Partial processing
+    }
+
+    return false; // No processing possible
+}
+</code></pre>
+<h3 id="4-avoid-frequent-polling">4. Avoid Frequent Polling</h3>
+<pre><code class="lang-csharp">// DON'T do this - wasteful polling
+public async Task BadPatternAsync()
+{
+    while (!await _rateLimiter.TryConsumeAsync())
+    {
+        await Task.Delay(10); // Wasteful
+    }
+    // Process request
+}
+
+// DO this instead - wait for the calculated time
+public async Task GoodPatternAsync()
+{
+    var waitTime = await _rateLimiter.GetWaitTimeAsync();
+    if (waitTime &gt; TimeSpan.Zero)
+    {
+        await Task.Delay(waitTime);
+    }
+    
+    await _rateLimiter.TryConsumeAsync();
+    // Process request
+}
+</code></pre>
+<h2 id="memory-management">Memory Management</h2>
+<h3 id="sliding-window-cleanup">Sliding Window Cleanup</h3>
+<p>The sliding window implementation automatically cleans up expired entries:</p>
+<pre><code class="lang-csharp">// The library handles this automatically, but you can help by:
+
+// 1. Using appropriate window sizes (don't make them too large)
+services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+{
+    options.Algorithm = RateLimitingAlgorithm.SlidingWindow;
+    options.Capacity = 100;
+    options.WindowSize = TimeSpan.FromMinutes(5); // Reasonable size
+});
+
+// 2. Calling ResetAsync() when appropriate (e.g., user logout)
+public async Task OnUserLogoutAsync(string userId)
+{
+    var userLimiter = _userLimiters.GetValueOrDefault(userId);
+    if (userLimiter != null)
+    {
+        await userLimiter.ResetAsync();
+        _userLimiters.TryRemove(userId, out _);
+    }
+}
+</code></pre>
+<h3 id="per-user-rate-limiters">Per-User Rate Limiters</h3>
+<pre><code class="lang-csharp">public class EfficientUserRateLimitingService
+{
+    private readonly ConcurrentDictionary&lt;string, IRateLimiter&gt; _userLimiters;
+    private readonly Timer _cleanupTimer;
+
+    public EfficientUserRateLimitingService()
+    {
+        _userLimiters = new ConcurrentDictionary&lt;string, IRateLimiter&gt;();
+        
+        // Cleanup inactive limiters every 10 minutes
+        _cleanupTimer = new Timer(CleanupInactiveLimiters, null, 
+            TimeSpan.FromMinutes(10), TimeSpan.FromMinutes(10));
+    }
+
+    private void CleanupInactiveLimiters(object state)
+    {
+        var cutoff = DateTime.UtcNow.AddMinutes(-30);
+        var inactiveUsers = new List&lt;string&gt;();
+
+        foreach (var kvp in _userLimiters)
+        {
+            // Check if limiter has been inactive
+            if (IsInactive(kvp.Value, cutoff))
+            {
+                inactiveUsers.Add(kvp.Key);
+            }
+        }
+
+        foreach (var userId in inactiveUsers)
+        {
+            _userLimiters.TryRemove(userId, out _);
+        }
+    }
+}
+</code></pre>
+<h2 id="distributed-performance">Distributed Performance</h2>
+<h3 id="redis-optimization">Redis Optimization</h3>
+<pre><code class="lang-csharp">services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+{
+    options.Algorithm = RateLimitingAlgorithm.TokenBucket;
+    options.Capacity = 1000;
+    options.RefillRate = 100;
+    options.RefillPeriod = TimeSpan.FromSeconds(1);
+    // Use a descriptive key
+    options.DistributedCacheKey = &quot;MyApp:API:RateLimit&quot;;
+});
+
+// Configure Redis for better performance
+services.AddStackExchangeRedisCache(options =&gt;
+{
+    options.Configuration = &quot;localhost:6379&quot;;
+    options.InstanceName = &quot;MyApp&quot;;
+    
+    // Optimize for rate limiting workloads
+    options.ConfigurationOptions = new StackExchange.Redis.ConfigurationOptions
+    {
+        EndPoints = { &quot;localhost:6379&quot; },
+        AbortOnConnectFail = false,
+        ConnectRetry = 3,
+        ConnectTimeout = 5000,
+        ResponseTimeout = 5000,
+        // Use connection pooling
+        KeepAlive = 60
+    };
+});
+</code></pre>
+<h2 id="monitoring-and-metrics">Monitoring and Metrics</h2>
+<pre><code class="lang-csharp">public class MonitoredRateLimiter : IRateLimiter
+{
+    private readonly IRateLimiter _inner;
+    private readonly IMetrics _metrics;
+
+    public MonitoredRateLimiter(IRateLimiter inner, IMetrics metrics)
+    {
+        _inner = inner;
+        _metrics = metrics;
+    }
+
+    public async Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    {
+        var stopwatch = Stopwatch.StartNew();
+        var result = await _inner.TryConsumeAsync(permits, cancellationToken);
+        stopwatch.Stop();
+
+        _metrics.Record(&quot;rate_limiter.try_consume.duration&quot;, stopwatch.ElapsedMilliseconds);
+        _metrics.Counter(&quot;rate_limiter.requests.total&quot;).Increment();
+        
+        if (result)
+        {
+            _metrics.Counter(&quot;rate_limiter.requests.allowed&quot;).Increment();
+        }
+        else
+        {
+            _metrics.Counter(&quot;rate_limiter.requests.denied&quot;).Increment();
+        }
+
+        return result;
+    }
+
+    // Implement other methods similarly...
+}
+</code></pre>
+<h2 id="performance-testing">Performance Testing</h2>
+<pre><code class="lang-csharp">[Test]
+public async Task PerformanceTest()
+{
+    var options = Options.Create(new RateLimiterOptions
+    {
+        Algorithm = RateLimitingAlgorithm.TokenBucket,
+        Capacity = 10000,
+        RefillRate = 1000,
+        RefillPeriod = TimeSpan.FromSeconds(1)
+    });
+
+    var rateLimiter = new TokenBucketStrategy(options);
+    var tasks = new List&lt;Task&lt;bool&gt;&gt;();
+
+    var stopwatch = Stopwatch.StartNew();
+
+    // Simulate 1000 concurrent requests
+    for (int i = 0; i &lt; 1000; i++)
+    {
+        tasks.Add(rateLimiter.TryConsumeAsync());
+    }
+
+    var results = await Task.WhenAll(tasks);
+    stopwatch.Stop();
+
+    Console.WriteLine($&quot;Processed 1000 requests in {stopwatch.ElapsedMilliseconds}ms&quot;);
+    Console.WriteLine($&quot;Allowed: {results.Count(r =&gt; r)}&quot;);
+    Console.WriteLine($&quot;Denied: {results.Count(r =&gt; !r)}&quot;);
+}
+</code></pre>
+<h2 id="best-practices-summary">Best Practices Summary</h2>
+<ol>
+<li><strong>Choose the right algorithm</strong> for your use case</li>
+<li><strong>Use separate limiters</strong> for different operations to reduce contention</li>
+<li><strong>Implement proper cleanup</strong> for per-user limiters</li>
+<li><strong>Monitor performance</strong> with metrics</li>
+<li><strong>Test under load</strong> to validate performance characteristics</li>
+<li><strong>Configure Redis appropriately</strong> for distributed scenarios</li>
+<li><strong>Avoid polling</strong> - use calculated wait times instead</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/todicn/RateLimiterPP/blob/cursor/build-xml-and-documentation-with-dotfx-2e95/articles/performance.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      RateLimiter Library - High-performance rate limiting for .NET applications
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

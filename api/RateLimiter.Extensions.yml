@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Extensions
+  commentId: N:RateLimiter.Extensions
+  id: RateLimiter.Extensions
+  children:
+  - RateLimiter.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: RateLimiter.Extensions
+  nameWithType: RateLimiter.Extensions
+  fullName: RateLimiter.Extensions
+  type: Namespace
+  assemblies:
+  - RateLimiter
+references:
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions
+  commentId: T:RateLimiter.Extensions.ServiceCollectionExtensions
+  href: RateLimiter.Extensions.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions

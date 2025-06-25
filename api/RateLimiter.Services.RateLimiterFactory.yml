@@ -1,0 +1,628 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Services.RateLimiterFactory
+  commentId: T:RateLimiter.Services.RateLimiterFactory
+  id: RateLimiterFactory
+  parent: RateLimiter.Services
+  children:
+  - RateLimiter.Services.RateLimiterFactory.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  - RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  - RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  - RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  - RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  langs:
+  - csharp
+  - vb
+  name: RateLimiterFactory
+  nameWithType: RateLimiterFactory
+  fullName: RateLimiter.Services.RateLimiterFactory
+  type: Class
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: RateLimiterFactory
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 10
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  summary: Factory for creating different rate limiting strategies.
+  example: []
+  syntax:
+    content: public class RateLimiterFactory
+    content.vb: Public Class RateLimiterFactory
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RateLimiter.Services.RateLimiterFactory.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  commentId: M:RateLimiter.Services.RateLimiterFactory.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  id: '#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})'
+  parent: RateLimiter.Services.RateLimiterFactory
+  langs:
+  - csharp
+  - vb
+  name: RateLimiterFactory(IOptions<RateLimiterOptions>)
+  nameWithType: RateLimiterFactory.RateLimiterFactory(IOptions<RateLimiterOptions>)
+  fullName: RateLimiter.Services.RateLimiterFactory.RateLimiterFactory(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  type: Constructor
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: .ctor
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 14
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  syntax:
+    content: public RateLimiterFactory(IOptions<RateLimiterOptions> options)
+    parameters:
+    - id: options
+      type: Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions}
+    content.vb: Public Sub New(options As IOptions(Of RateLimiterOptions))
+  overload: RateLimiter.Services.RateLimiterFactory.#ctor*
+  nameWithType.vb: RateLimiterFactory.New(IOptions(Of RateLimiterOptions))
+  fullName.vb: RateLimiter.Services.RateLimiterFactory.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  name.vb: New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  id: CreateTokenBucket
+  parent: RateLimiter.Services.RateLimiterFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateTokenBucket()
+  nameWithType: RateLimiterFactory.CreateTokenBucket()
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket()
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: CreateTokenBucket
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 22
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  summary: Creates a token bucket rate limiter strategy.
+  example: []
+  syntax:
+    content: public IRateLimiter CreateTokenBucket()
+    return:
+      type: RateLimiter.Interfaces.IRateLimiter
+    content.vb: Public Function CreateTokenBucket() As IRateLimiter
+  overload: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket*
+- uid: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  id: CreateFixedWindow
+  parent: RateLimiter.Services.RateLimiterFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateFixedWindow()
+  nameWithType: RateLimiterFactory.CreateFixedWindow()
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow()
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: CreateFixedWindow
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 30
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  summary: Creates a fixed window rate limiter strategy.
+  example: []
+  syntax:
+    content: public IRateLimiter CreateFixedWindow()
+    return:
+      type: RateLimiter.Interfaces.IRateLimiter
+    content.vb: Public Function CreateFixedWindow() As IRateLimiter
+  overload: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow*
+- uid: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  id: CreateSlidingWindow
+  parent: RateLimiter.Services.RateLimiterFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateSlidingWindow()
+  nameWithType: RateLimiterFactory.CreateSlidingWindow()
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow()
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: CreateSlidingWindow
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 38
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  summary: Creates a sliding window rate limiter strategy.
+  example: []
+  syntax:
+    content: public IRateLimiter CreateSlidingWindow()
+    return:
+      type: RateLimiter.Interfaces.IRateLimiter
+    content.vb: Public Function CreateSlidingWindow() As IRateLimiter
+  overload: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow*
+- uid: RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  id: CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  parent: RateLimiter.Services.RateLimiterFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateStrategy(RateLimiterStrategyType)
+  nameWithType: RateLimiterFactory.CreateStrategy(RateLimiterStrategyType)
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  type: Method
+  source:
+    remote:
+      path: RateLimiter/Services/RateLimiterFactory.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: CreateStrategy
+    path: RateLimiter/Services/RateLimiterFactory.cs
+    startLine: 47
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Services
+  summary: Creates a rate limiter strategy based on the specified type.
+  example: []
+  syntax:
+    content: public IRateLimiter CreateStrategy(RateLimiterStrategyType strategyType)
+    parameters:
+    - id: strategyType
+      type: RateLimiter.Services.RateLimiterStrategyType
+      description: The type of strategy to create
+    return:
+      type: RateLimiter.Interfaces.IRateLimiter
+    content.vb: Public Function CreateStrategy(strategyType As RateLimiterStrategyType) As IRateLimiter
+  overload: RateLimiter.Services.RateLimiterFactory.CreateStrategy*
+references:
+- uid: RateLimiter.Services
+  commentId: N:RateLimiter.Services
+  href: RateLimiter.html
+  name: RateLimiter.Services
+  nameWithType: RateLimiter.Services
+  fullName: RateLimiter.Services
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Services
+    name: Services
+    href: RateLimiter.Services.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Services
+    name: Services
+    href: RateLimiter.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RateLimiter.Services.RateLimiterFactory.#ctor*
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.#ctor
+  href: RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  name: RateLimiterFactory
+  nameWithType: RateLimiterFactory.RateLimiterFactory
+  fullName: RateLimiter.Services.RateLimiterFactory.RateLimiterFactory
+  nameWithType.vb: RateLimiterFactory.New
+  fullName.vb: RateLimiter.Services.RateLimiterFactory.New
+  name.vb: New
+- uid: Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions}
+  commentId: T:Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<RateLimiterOptions>
+  nameWithType: IOptions<RateLimiterOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>
+  nameWithType.vb: IOptions(Of RateLimiterOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions)
+  name.vb: IOptions(Of RateLimiterOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: RateLimiter.Configuration.RateLimiterOptions
+    name: RateLimiterOptions
+    href: RateLimiter.Configuration.RateLimiterOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: RateLimiter.Configuration.RateLimiterOptions
+    name: RateLimiterOptions
+    href: RateLimiter.Configuration.RateLimiterOptions.html
+  - name: )
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket*
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  href: RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateTokenBucket
+  name: CreateTokenBucket
+  nameWithType: RateLimiterFactory.CreateTokenBucket
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+- uid: RateLimiter.Interfaces.IRateLimiter
+  commentId: T:RateLimiter.Interfaces.IRateLimiter
+  parent: RateLimiter.Interfaces
+  href: RateLimiter.Interfaces.IRateLimiter.html
+  name: IRateLimiter
+  nameWithType: IRateLimiter
+  fullName: RateLimiter.Interfaces.IRateLimiter
+- uid: RateLimiter.Interfaces
+  commentId: N:RateLimiter.Interfaces
+  href: RateLimiter.html
+  name: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Interfaces
+    name: Interfaces
+    href: RateLimiter.Interfaces.html
+- uid: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow*
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  href: RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateFixedWindow
+  name: CreateFixedWindow
+  nameWithType: RateLimiterFactory.CreateFixedWindow
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+- uid: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow*
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  href: RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateSlidingWindow
+  name: CreateSlidingWindow
+  nameWithType: RateLimiterFactory.CreateSlidingWindow
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+- uid: RateLimiter.Services.RateLimiterFactory.CreateStrategy*
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateStrategy
+  href: RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateStrategy_RateLimiter_Services_RateLimiterStrategyType_
+  name: CreateStrategy
+  nameWithType: RateLimiterFactory.CreateStrategy
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateStrategy
+- uid: RateLimiter.Services.RateLimiterStrategyType
+  commentId: T:RateLimiter.Services.RateLimiterStrategyType
+  parent: RateLimiter.Services
+  href: RateLimiter.Services.RateLimiterStrategyType.html
+  name: RateLimiterStrategyType
+  nameWithType: RateLimiterStrategyType
+  fullName: RateLimiter.Services.RateLimiterStrategyType

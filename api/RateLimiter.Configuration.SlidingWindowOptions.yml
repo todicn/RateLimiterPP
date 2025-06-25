@@ -1,0 +1,425 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Configuration.SlidingWindowOptions
+  commentId: T:RateLimiter.Configuration.SlidingWindowOptions
+  id: SlidingWindowOptions
+  parent: RateLimiter.Configuration
+  children:
+  - RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  - RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  - RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  langs:
+  - csharp
+  - vb
+  name: SlidingWindowOptions
+  nameWithType: SlidingWindowOptions
+  fullName: RateLimiter.Configuration.SlidingWindowOptions
+  type: Class
+  source:
+    remote:
+      path: RateLimiter/Configuration/RateLimiterOptions.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: SlidingWindowOptions
+    path: RateLimiter/Configuration/RateLimiterOptions.cs
+    startLine: 60
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Configuration
+  summary: Sliding window specific configuration
+  example: []
+  syntax:
+    content: public class SlidingWindowOptions
+    content.vb: Public Class SlidingWindowOptions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  commentId: P:RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  id: MaxRequests
+  parent: RateLimiter.Configuration.SlidingWindowOptions
+  langs:
+  - csharp
+  - vb
+  name: MaxRequests
+  nameWithType: SlidingWindowOptions.MaxRequests
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  type: Property
+  source:
+    remote:
+      path: RateLimiter/Configuration/RateLimiterOptions.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: MaxRequests
+    path: RateLimiter/Configuration/RateLimiterOptions.cs
+    startLine: 65
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Configuration
+  summary: Maximum number of requests in the sliding window
+  example: []
+  syntax:
+    content: public int MaxRequests { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxRequests As Integer
+  overload: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests*
+- uid: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  commentId: P:RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  id: WindowSizeInSeconds
+  parent: RateLimiter.Configuration.SlidingWindowOptions
+  langs:
+  - csharp
+  - vb
+  name: WindowSizeInSeconds
+  nameWithType: SlidingWindowOptions.WindowSizeInSeconds
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  type: Property
+  source:
+    remote:
+      path: RateLimiter/Configuration/RateLimiterOptions.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: WindowSizeInSeconds
+    path: RateLimiter/Configuration/RateLimiterOptions.cs
+    startLine: 70
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Configuration
+  summary: Window duration in seconds
+  example: []
+  syntax:
+    content: public int WindowSizeInSeconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property WindowSizeInSeconds As Integer
+  overload: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds*
+- uid: RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  commentId: P:RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  id: SubWindows
+  parent: RateLimiter.Configuration.SlidingWindowOptions
+  langs:
+  - csharp
+  - vb
+  name: SubWindows
+  nameWithType: SlidingWindowOptions.SubWindows
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  type: Property
+  source:
+    remote:
+      path: RateLimiter/Configuration/RateLimiterOptions.cs
+      branch: cursor/build-xml-and-documentation-with-dotfx-2e95
+      repo: https://github.com/todicn/RateLimiterPP
+    id: SubWindows
+    path: RateLimiter/Configuration/RateLimiterOptions.cs
+    startLine: 75
+  assemblies:
+  - RateLimiter
+  namespace: RateLimiter.Configuration
+  summary: Number of sub-windows for sliding calculation
+  example: []
+  syntax:
+    content: public int SubWindows { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SubWindows As Integer
+  overload: RateLimiter.Configuration.SlidingWindowOptions.SubWindows*
+references:
+- uid: RateLimiter.Configuration
+  commentId: N:RateLimiter.Configuration
+  href: RateLimiter.html
+  name: RateLimiter.Configuration
+  nameWithType: RateLimiter.Configuration
+  fullName: RateLimiter.Configuration
+  spec.csharp:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Configuration
+    name: Configuration
+    href: RateLimiter.Configuration.html
+  spec.vb:
+  - uid: RateLimiter
+    name: RateLimiter
+    href: RateLimiter.html
+  - name: .
+  - uid: RateLimiter.Configuration
+    name: Configuration
+    href: RateLimiter.Configuration.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests*
+  commentId: Overload:RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  href: RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_MaxRequests
+  name: MaxRequests
+  nameWithType: SlidingWindowOptions.MaxRequests
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds*
+  commentId: Overload:RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  href: RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_WindowSizeInSeconds
+  name: WindowSizeInSeconds
+  nameWithType: SlidingWindowOptions.WindowSizeInSeconds
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+- uid: RateLimiter.Configuration.SlidingWindowOptions.SubWindows*
+  commentId: Overload:RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  href: RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_SubWindows
+  name: SubWindows
+  nameWithType: SlidingWindowOptions.SubWindows
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.SubWindows

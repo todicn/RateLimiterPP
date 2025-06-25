@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>RateLimiter Library Documentation | RateLimiter Library Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="RateLimiter Library Documentation | RateLimiter Library Documentation ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ratelimiter-library-documentation">RateLimiter Library Documentation</h1>
+
+<p>Welcome to the comprehensive documentation for the RateLimiter library - a high-performance, thread-safe rate limiting solution for .NET applications.</p>
+<h2 id="overview">Overview</h2>
+<p>The RateLimiter library provides multiple rate limiting algorithms implemented using the Strategy and Adapter design patterns. It's designed for Shopify pair programming interviews and demonstrates professional-grade software architecture and engineering practices.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Multiple Algorithms</strong>: Token Bucket, Fixed Window, and Sliding Window rate limiting strategies</li>
+<li><strong>Thread-Safe</strong>: All implementations are designed for concurrent access</li>
+<li><strong>Dependency Injection</strong>: Full support for Microsoft.Extensions.DependencyInjection</li>
+<li><strong>Configuration</strong>: Flexible configuration using the Options pattern</li>
+<li><strong>Async/Await</strong>: Modern async programming patterns throughout</li>
+<li><strong>High Performance</strong>: Optimized for minimal memory allocations and high throughput</li>
+</ul>
+<h2 id="supported-rate-limiting-algorithms">Supported Rate Limiting Algorithms</h2>
+<h3 id="token-bucket">Token Bucket</h3>
+<p>Allows burst traffic up to a configured capacity while maintaining a steady refill rate. Ideal for scenarios where occasional bursts are acceptable.</p>
+<h3 id="fixed-window">Fixed Window</h3>
+<p>Counts requests within fixed time windows. Simple and memory-efficient, but can allow burst traffic at window boundaries.</p>
+<h3 id="sliding-window">Sliding Window</h3>
+<p>Provides smooth rate limiting by maintaining a rolling window of request timestamps. More accurate than fixed window but uses more memory.</p>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="lang-csharp">// Basic usage with dependency injection
+services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+{
+    options.Algorithm = RateLimitingAlgorithm.TokenBucket;
+    options.Capacity = 100;
+    options.RefillRate = 10;
+    options.RefillPeriod = TimeSpan.FromSeconds(1);
+});
+
+services.AddRateLimiter();
+
+// Use in your service
+public class MyService
+{
+    private readonly IRateLimiter _rateLimiter;
+
+    public MyService(IRateLimiter rateLimiter)
+    {
+        _rateLimiter = rateLimiter;
+    }
+
+    public async Task&lt;bool&gt; ProcessRequestAsync()
+    {
+        if (await _rateLimiter.TryConsumeAsync())
+        {
+            // Process the request
+            return true;
+        }
+        
+        // Rate limit exceeded
+        return false;
+    }
+}
+</code></pre>
+<h2 id="architecture">Architecture</h2>
+<p>The library is built using several design patterns:</p>
+<ul>
+<li><strong>Strategy Pattern</strong>: Allows switching between rate limiting algorithms at runtime</li>
+<li><strong>Adapter Pattern</strong>: Provides backward compatibility with legacy interfaces</li>
+<li><strong>Factory Pattern</strong>: Creates appropriate rate limiter instances based on configuration</li>
+<li><strong>Options Pattern</strong>: Manages configuration through IOptions<t></t></li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li><a href="articles/getting-started.html">Installation and Setup</a> - Learn how to install and configure the library</li>
+<li><a href="articles/configuration.html">Configuration Guide</a> - Understand all configuration options</li>
+<li><a href="articles/usage-examples.html">Usage Examples</a> - See practical examples for different scenarios</li>
+<li><a href="articles/performance.html">Performance Considerations</a> - Optimize for your use case</li>
+<li><a href="api/">API Reference</a> - Detailed API documentation</li>
+</ol>
+<h2 id="contributing">Contributing</h2>
+<p>This project demonstrates best practices for:</p>
+<ul>
+<li>Clean architecture and SOLID principles</li>
+<li>Comprehensive unit testing with high coverage</li>
+<li>Thread-safe concurrent programming</li>
+<li>Modern C# and .NET features</li>
+<li>Professional documentation</li>
+</ul>
+<h2 id="support">Support</h2>
+<p>For questions, issues, or contributions, please refer to the project repository and documentation.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/todicn/RateLimiterPP/blob/cursor/build-xml-and-documentation-with-dotfx-2e95/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      RateLimiter Library - High-performance rate limiting for .NET applications
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

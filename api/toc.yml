@@ -1,0 +1,75 @@
+### YamlMime:TableOfContent
+items:
+- uid: RateLimiter.Adapters
+  name: RateLimiter.Adapters
+  type: Namespace
+  items:
+  - uid: RateLimiter.Adapters.IRateLimiterAdapter
+    name: IRateLimiterAdapter
+    type: Interface
+  - uid: RateLimiter.Adapters.TokenBucketAdapter
+    name: TokenBucketAdapter
+    type: Class
+  - uid: RateLimiter.Adapters.UniversalRateLimiterAdapter
+    name: UniversalRateLimiterAdapter
+    type: Class
+- uid: RateLimiter.Configuration
+  name: RateLimiter.Configuration
+  type: Namespace
+  items:
+  - uid: RateLimiter.Configuration.FixedWindowOptions
+    name: FixedWindowOptions
+    type: Class
+  - uid: RateLimiter.Configuration.RateLimiterOptions
+    name: RateLimiterOptions
+    type: Class
+  - uid: RateLimiter.Configuration.SlidingWindowOptions
+    name: SlidingWindowOptions
+    type: Class
+  - uid: RateLimiter.Configuration.TokenBucketOptions
+    name: TokenBucketOptions
+    type: Class
+- uid: RateLimiter.Extensions
+  name: RateLimiter.Extensions
+  type: Namespace
+  items:
+  - uid: RateLimiter.Extensions.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+    type: Class
+- uid: RateLimiter.Implementations
+  name: RateLimiter.Implementations
+  type: Namespace
+  items:
+  - uid: RateLimiter.Implementations.FixedWindowStrategy
+    name: FixedWindowStrategy
+    type: Class
+  - uid: RateLimiter.Implementations.SlidingWindowStrategy
+    name: SlidingWindowStrategy
+    type: Class
+  - uid: RateLimiter.Implementations.TokenBucket
+    name: TokenBucket
+    type: Class
+  - uid: RateLimiter.Implementations.TokenBucketStrategy
+    name: TokenBucketStrategy
+    type: Class
+- uid: RateLimiter.Interfaces
+  name: RateLimiter.Interfaces
+  type: Namespace
+  items:
+  - uid: RateLimiter.Interfaces.IRateLimiter
+    name: IRateLimiter
+    type: Interface
+- uid: RateLimiter.Services
+  name: RateLimiter.Services
+  type: Namespace
+  items:
+  - uid: RateLimiter.Services.RateLimiterContext
+    name: RateLimiterContext
+    type: Class
+  - uid: RateLimiter.Services.RateLimiterFactory
+    name: RateLimiterFactory
+    type: Class
+  - uid: RateLimiter.Services.RateLimiterStrategyType
+    name: RateLimiterStrategyType
+    type: Enum
+memberLayout: SamePage

@@ -1,0 +1,456 @@
+{
+  "source_base_path": "/workspace",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Adapters.IRateLimiterAdapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Adapters.IRateLimiterAdapter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Adapters.IRateLimiterAdapter",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Adapters.IRateLimiterAdapter.yml\" sourcestartlinenumber=\"1\">Adapter interface for bridging between different rate limiter implementations.\nThis allows legacy code to work with new strategy implementations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Adapters.TokenBucketAdapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Adapters.TokenBucketAdapter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Adapters.TokenBucketAdapter",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Adapters.TokenBucketAdapter.yml\" sourcestartlinenumber=\"1\">Adapter that bridges the legacy TokenBucket interface with the new TokenBucketStrategy implementation.\nThis ensures backward compatibility while allowing access to new features.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Adapters.UniversalRateLimiterAdapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Adapters.UniversalRateLimiterAdapter",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Adapters.UniversalRateLimiterAdapter.yml\" sourcestartlinenumber=\"1\">Universal adapter that can work with any rate limiting strategy.\nThis provides a consistent interface for testing and legacy code integration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Adapters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Adapters.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Adapters",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Configuration.FixedWindowOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Configuration.FixedWindowOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Configuration.FixedWindowOptions",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Configuration.FixedWindowOptions.yml\" sourcestartlinenumber=\"1\">Fixed window specific configuration</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Configuration.RateLimiterOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Configuration.RateLimiterOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Configuration.RateLimiterOptions",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Configuration.RateLimiterOptions.yml\" sourcestartlinenumber=\"1\">Configuration options for rate limiters</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Configuration.SlidingWindowOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Configuration.SlidingWindowOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Configuration.SlidingWindowOptions",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Configuration.SlidingWindowOptions.yml\" sourcestartlinenumber=\"1\">Sliding window specific configuration</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Configuration.TokenBucketOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Configuration.TokenBucketOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Configuration.TokenBucketOptions",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Configuration.TokenBucketOptions.yml\" sourcestartlinenumber=\"1\">Token bucket specific configuration</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Configuration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Configuration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Extensions.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Extensions.ServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Extensions.ServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Extensions.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Extension methods for setting up rate limiter services in DI container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Implementations.FixedWindowStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Implementations.FixedWindowStrategy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Implementations.FixedWindowStrategy",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Implementations.FixedWindowStrategy.yml\" sourcestartlinenumber=\"1\">Fixed window rate limiter strategy implementation.</p>\n<p sourcefile=\"api/RateLimiter.Implementations.FixedWindowStrategy.yml\" sourcestartlinenumber=\"3\">The fixed window algorithm maintains a counter for a fixed time window.\nThe counter resets at the start of each window period.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Implementations.SlidingWindowStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Implementations.SlidingWindowStrategy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Implementations.SlidingWindowStrategy",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Implementations.SlidingWindowStrategy.yml\" sourcestartlinenumber=\"1\">Sliding window rate limiter strategy implementation.</p>\n<p sourcefile=\"api/RateLimiter.Implementations.SlidingWindowStrategy.yml\" sourcestartlinenumber=\"3\">The sliding window algorithm divides the time window into smaller sub-windows\nand tracks requests across these sub-windows for more accurate rate limiting.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Implementations.TokenBucket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Implementations.TokenBucket.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Implementations.TokenBucket",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Implementations.TokenBucket.yml\" sourcestartlinenumber=\"1\">Token bucket rate limiter - backward compatibility wrapper.\nFor new code, use TokenBucketStrategy directly or RateLimiterFactory.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Implementations.TokenBucketStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Implementations.TokenBucketStrategy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Implementations.TokenBucketStrategy",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Implementations.TokenBucketStrategy.yml\" sourcestartlinenumber=\"1\">Token bucket rate limiter strategy implementation.</p>\n<p sourcefile=\"api/RateLimiter.Implementations.TokenBucketStrategy.yml\" sourcestartlinenumber=\"3\">The token bucket algorithm allows for bursty traffic while maintaining\nan average rate limit. Tokens are added to a bucket at a fixed rate.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Implementations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Implementations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Implementations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Interfaces.IRateLimiter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Interfaces.IRateLimiter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Interfaces.IRateLimiter",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Interfaces.IRateLimiter.yml\" sourcestartlinenumber=\"1\">Interface for rate limiting implementations</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Services.RateLimiterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Services.RateLimiterContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Services.RateLimiterContext",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Services.RateLimiterContext.yml\" sourcestartlinenumber=\"1\">Rate limiter context that uses the strategy pattern to switch between different rate limiting algorithms.\nThis allows for runtime strategy selection and testing different algorithms.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Services.RateLimiterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Services.RateLimiterFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Services.RateLimiterFactory",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Services.RateLimiterFactory.yml\" sourcestartlinenumber=\"1\">Factory for creating different rate limiting strategies.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Services.RateLimiterStrategyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Services.RateLimiterStrategyType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Services.RateLimiterStrategyType",
+      "Summary": "<p sourcefile=\"api/RateLimiter.Services.RateLimiterStrategyType.yml\" sourcestartlinenumber=\"1\">Enumeration of available rate limiting strategy types.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RateLimiter.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RateLimiter.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "RateLimiter.Services",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/performance.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/performance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/testing.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/testing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/usage-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/usage-examples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

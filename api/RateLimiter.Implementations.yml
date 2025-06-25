@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: RateLimiter.Implementations
+  commentId: N:RateLimiter.Implementations
+  id: RateLimiter.Implementations
+  children:
+  - RateLimiter.Implementations.FixedWindowStrategy
+  - RateLimiter.Implementations.SlidingWindowStrategy
+  - RateLimiter.Implementations.TokenBucket
+  - RateLimiter.Implementations.TokenBucketStrategy
+  langs:
+  - csharp
+  - vb
+  name: RateLimiter.Implementations
+  nameWithType: RateLimiter.Implementations
+  fullName: RateLimiter.Implementations
+  type: Namespace
+  assemblies:
+  - RateLimiter
+references:
+- uid: RateLimiter.Implementations.FixedWindowStrategy
+  commentId: T:RateLimiter.Implementations.FixedWindowStrategy
+  href: RateLimiter.Implementations.FixedWindowStrategy.html
+  name: FixedWindowStrategy
+  nameWithType: FixedWindowStrategy
+  fullName: RateLimiter.Implementations.FixedWindowStrategy
+- uid: RateLimiter.Implementations.SlidingWindowStrategy
+  commentId: T:RateLimiter.Implementations.SlidingWindowStrategy
+  href: RateLimiter.Implementations.SlidingWindowStrategy.html
+  name: SlidingWindowStrategy
+  nameWithType: SlidingWindowStrategy
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy
+- uid: RateLimiter.Implementations.TokenBucket
+  commentId: T:RateLimiter.Implementations.TokenBucket
+  href: RateLimiter.Implementations.TokenBucket.html
+  name: TokenBucket
+  nameWithType: TokenBucket
+  fullName: RateLimiter.Implementations.TokenBucket
+- uid: RateLimiter.Implementations.TokenBucketStrategy
+  commentId: T:RateLimiter.Implementations.TokenBucketStrategy
+  href: RateLimiter.Implementations.TokenBucketStrategy.html
+  name: TokenBucketStrategy
+  nameWithType: TokenBucketStrategy
+  fullName: RateLimiter.Implementations.TokenBucketStrategy

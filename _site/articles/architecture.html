@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Architecture Guide | RateLimiter Library Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Architecture Guide | RateLimiter Library Documentation ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="architecture-guide">Architecture Guide</h1>
+
+<p>This guide explains the architectural patterns and design principles used in the RateLimiter library.</p>
+<h2 id="design-patterns">Design Patterns</h2>
+<h3 id="strategy-pattern">Strategy Pattern</h3>
+<p>The Strategy pattern allows the rate limiting algorithm to be selected at runtime:</p>
+<pre><code class="lang-csharp">// IRateLimiter is the strategy interface
+public interface IRateLimiter
+{
+    Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default);
+    Task&lt;int&gt; GetAvailablePermitsAsync(CancellationToken cancellationToken = default);
+    Task&lt;TimeSpan&gt; GetWaitTimeAsync(int permits = 1, CancellationToken cancellationToken = default);
+    Task ResetAsync(CancellationToken cancellationToken = default);
+}
+
+// Concrete strategies
+public class TokenBucketStrategy : IRateLimiter { /* ... */ }
+public class FixedWindowStrategy : IRateLimiter { /* ... */ }
+public class SlidingWindowStrategy : IRateLimiter { /* ... */ }
+</code></pre>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Easy to switch algorithms at runtime</li>
+<li>Each algorithm is independently testable</li>
+<li>New algorithms can be added without modifying existing code</li>
+</ul>
+<h3 id="adapter-pattern">Adapter Pattern</h3>
+<p>The Adapter pattern provides backward compatibility and legacy interface support:</p>
+<pre><code class="lang-csharp">public interface IRateLimiterAdapter : IRateLimiter
+{
+    string StrategyTypeName { get; }
+    void SetStrategy(IRateLimiter strategy);
+    string GetDebugInfo();
+}
+
+public class TokenBucketAdapter : IRateLimiterAdapter
+{
+    private readonly TokenBucketStrategy _strategy;
+
+    public TokenBucketAdapter(IOptions&lt;RateLimiterOptions&gt; options)
+    {
+        _strategy = new TokenBucketStrategy(options);
+    }
+
+    // Adapter methods delegate to the strategy
+    public Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+        =&gt; _strategy.TryConsumeAsync(permits, cancellationToken);
+}
+</code></pre>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Maintains compatibility with legacy code</li>
+<li>Provides additional features (debug info, strategy introspection)</li>
+<li>Allows gradual migration to new interfaces</li>
+</ul>
+<h3 id="factory-pattern">Factory Pattern</h3>
+<p>The Factory pattern creates appropriate rate limiter instances based on configuration:</p>
+<pre><code class="lang-csharp">public class RateLimiterFactory
+{
+    private readonly IOptions&lt;RateLimiterOptions&gt; _options;
+
+    public RateLimiterFactory(IOptions&lt;RateLimiterOptions&gt; options)
+    {
+        _options = options;
+    }
+
+    public IRateLimiter CreateRateLimiter()
+    {
+        return _options.Value.Algorithm switch
+        {
+            RateLimitingAlgorithm.TokenBucket =&gt; new TokenBucketStrategy(_options),
+            RateLimitingAlgorithm.FixedWindow =&gt; new FixedWindowStrategy(_options),
+            RateLimitingAlgorithm.SlidingWindow =&gt; new SlidingWindowStrategy(_options),
+            _ =&gt; throw new ArgumentException($&quot;Unknown algorithm: {_options.Value.Algorithm}&quot;)
+        };
+    }
+}
+</code></pre>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Centralizes object creation logic</li>
+<li>Supports configuration-driven instantiation</li>
+<li>Easy to extend with new algorithms</li>
+</ul>
+<h3 id="options-pattern">Options Pattern</h3>
+<p>The Options pattern provides type-safe configuration management:</p>
+<pre><code class="lang-csharp">public class RateLimiterOptions
+{
+    public const string SectionName = &quot;RateLimiter&quot;;
+
+    public RateLimitingAlgorithm Algorithm { get; set; } = RateLimitingAlgorithm.TokenBucket;
+    public int Capacity { get; set; } = 100;
+    public double RefillRate { get; set; } = 10;
+    public TimeSpan RefillPeriod { get; set; } = TimeSpan.FromSeconds(1);
+    public TimeSpan WindowSize { get; set; } = TimeSpan.FromMinutes(1);
+    public string? DistributedCacheKey { get; set; }
+}
+</code></pre>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Type-safe configuration</li>
+<li>Supports validation</li>
+<li>Integrates with ASP.NET Core configuration system</li>
+</ul>
+<h2 id="architectural-layers">Architectural Layers</h2>
+<h3 id="1-interface-layer">1. Interface Layer</h3>
+<pre><code>┌─────────────────────────────────────┐
+│           IRateLimiter              │
+│         (Core Interface)            │
+└─────────────────────────────────────┘
+</code></pre>
+<h3 id="2-strategy-layer">2. Strategy Layer</h3>
+<pre><code>┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ TokenBucket     │ │ FixedWindow     │ │ SlidingWindow   │
+│ Strategy        │ │ Strategy        │ │ Strategy        │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+</code></pre>
+<h3 id="3-adapter-layer">3. Adapter Layer</h3>
+<pre><code>┌─────────────────┐ ┌─────────────────┐
+│ TokenBucket     │ │ Universal       │
+│ Adapter         │ │ Adapter         │
+└─────────────────┘ └─────────────────┘
+</code></pre>
+<h3 id="4-service-layer">4. Service Layer</h3>
+<pre><code>┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ RateLimiter     │ │ RateLimiter     │ │ Service         │
+│ Factory         │ │ Context         │ │ Extensions      │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+</code></pre>
+<h2 id="thread-safety">Thread Safety</h2>
+<p>All rate limiter implementations are designed to be thread-safe:</p>
+<h3 id="lock-free-optimizations">Lock-Free Optimizations</h3>
+<pre><code class="lang-csharp">public class TokenBucketStrategy : IRateLimiter
+{
+    private readonly object _lock = new object();
+    private double _tokens;
+    private DateTime _lastRefill;
+
+    public async Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    {
+        lock (_lock)
+        {
+            Refill();
+            
+            if (_tokens &gt;= permits)
+            {
+                _tokens -= permits;
+                return true;
+            }
+            
+            return false;
+        }
+    }
+}
+</code></pre>
+<h3 id="concurrent-collections">Concurrent Collections</h3>
+<pre><code class="lang-csharp">// For sliding window, using concurrent data structures
+private readonly ConcurrentQueue&lt;DateTime&gt; _requestTimes = new();
+</code></pre>
+<h2 id="extension-points">Extension Points</h2>
+<h3 id="custom-algorithms">Custom Algorithms</h3>
+<p>To add a new rate limiting algorithm:</p>
+<ol>
+<li>Implement <code>IRateLimiter</code>:</li>
+</ol>
+<pre><code class="lang-csharp">public class CustomRateLimiter : IRateLimiter
+{
+    public async Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    {
+        // Your custom logic here
+        throw new NotImplementedException();
+    }
+
+    // Implement other methods...
+}
+</code></pre>
+<ol start="2">
+<li>Add to the factory:</li>
+</ol>
+<pre><code class="lang-csharp">public enum RateLimitingAlgorithm
+{
+    TokenBucket,
+    FixedWindow,
+    SlidingWindow,
+    Custom // Add your algorithm
+}
+
+// Update factory
+public IRateLimiter CreateRateLimiter()
+{
+    return _options.Value.Algorithm switch
+    {
+        // ... existing cases
+        RateLimitingAlgorithm.Custom =&gt; new CustomRateLimiter(_options),
+        _ =&gt; throw new ArgumentException($&quot;Unknown algorithm: {_options.Value.Algorithm}&quot;)
+    };
+}
+</code></pre>
+<h3 id="custom-storage-backends">Custom Storage Backends</h3>
+<p>For distributed scenarios, you can implement custom storage:</p>
+<pre><code class="lang-csharp">public interface IRateLimiterStorage
+{
+    Task&lt;T&gt; GetAsync&lt;T&gt;(string key);
+    Task SetAsync&lt;T&gt;(string key, T value, TimeSpan? expiry = null);
+    Task&lt;bool&gt; TryLockAsync(string key, TimeSpan timeout);
+    Task ReleaseLockAsync(string key);
+}
+
+public class RedisRateLimiterStorage : IRateLimiterStorage
+{
+    // Implementation using Redis
+}
+</code></pre>
+<h2 id="error-handling-strategy">Error Handling Strategy</h2>
+<h3 id="graceful-degradation">Graceful Degradation</h3>
+<pre><code class="lang-csharp">public class ResilientRateLimiter : IRateLimiter
+{
+    private readonly IRateLimiter _primary;
+    private readonly IRateLimiter _fallback;
+
+    public async Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            return await _primary.TryConsumeAsync(permits, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            // Log error and use fallback
+            return await _fallback.TryConsumeAsync(permits, cancellationToken);
+        }
+    }
+}
+</code></pre>
+<h3 id="circuit-breaker-pattern">Circuit Breaker Pattern</h3>
+<pre><code class="lang-csharp">public class CircuitBreakerRateLimiter : IRateLimiter
+{
+    private readonly IRateLimiter _inner;
+    private readonly CircuitBreaker _circuitBreaker;
+
+    public async Task&lt;bool&gt; TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
+    {
+        if (_circuitBreaker.State == CircuitBreakerState.Open)
+        {
+            // Fail fast
+            return false;
+        }
+
+        try
+        {
+            var result = await _inner.TryConsumeAsync(permits, cancellationToken);
+            _circuitBreaker.RecordSuccess();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            _circuitBreaker.RecordFailure();
+            throw;
+        }
+    }
+}
+</code></pre>
+<h2 id="testing-architecture">Testing Architecture</h2>
+<h3 id="unit-testing">Unit Testing</h3>
+<pre><code class="lang-csharp">[TestFixture]
+public class TokenBucketStrategyTests
+{
+    private TokenBucketStrategy _rateLimiter;
+    private RateLimiterOptions _options;
+
+    [SetUp]
+    public void Setup()
+    {
+        _options = new RateLimiterOptions
+        {
+            Algorithm = RateLimitingAlgorithm.TokenBucket,
+            Capacity = 10,
+            RefillRate = 1,
+            RefillPeriod = TimeSpan.FromSeconds(1)
+        };
+        _rateLimiter = new TokenBucketStrategy(Options.Create(_options));
+    }
+
+    [Test]
+    public async Task ShouldAllowRequestsUnderCapacity()
+    {
+        // Test implementation
+    }
+}
+</code></pre>
+<h3 id="integration-testing">Integration Testing</h3>
+<pre><code class="lang-csharp">[TestFixture]
+public class RateLimiterIntegrationTests
+{
+    private WebApplicationFactory&lt;Program&gt; _factory;
+    private HttpClient _client;
+
+    [SetUp]
+    public void Setup()
+    {
+        _factory = new WebApplicationFactory&lt;Program&gt;()
+            .WithWebHostBuilder(builder =&gt;
+            {
+                builder.ConfigureServices(services =&gt;
+                {
+                    services.Configure&lt;RateLimiterOptions&gt;(options =&gt;
+                    {
+                        options.Capacity = 5;
+                        options.RefillRate = 1;
+                        options.RefillPeriod = TimeSpan.FromSeconds(1);
+                    });
+                });
+            });
+        _client = _factory.CreateClient();
+    }
+}
+</code></pre>
+<h2 id="deployment-considerations">Deployment Considerations</h2>
+<h3 id="distributed-deployments">Distributed Deployments</h3>
+<ul>
+<li>Use Redis for shared state</li>
+<li>Configure appropriate timeout values</li>
+<li>Consider network partitions and failover scenarios</li>
+</ul>
+<h3 id="performance-monitoring">Performance Monitoring</h3>
+<ul>
+<li>Track rate limiter hit rates</li>
+<li>Monitor response times</li>
+<li>Alert on error rates</li>
+</ul>
+<h3 id="configuration-management">Configuration Management</h3>
+<ul>
+<li>Use environment-specific configurations</li>
+<li>Support hot configuration reloading</li>
+<li>Validate configuration at startup</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/todicn/RateLimiterPP/blob/cursor/build-xml-and-documentation-with-dotfx-2e95/articles/architecture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      RateLimiter Library - High-performance rate limiting for .NET applications
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

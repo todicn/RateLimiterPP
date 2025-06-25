@@ -1,0 +1,1206 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: RateLimiter.Adapters
+  name: RateLimiter.Adapters
+  href: api/RateLimiter.Adapters.html
+  commentId: N:RateLimiter.Adapters
+  fullName: RateLimiter.Adapters
+  nameWithType: RateLimiter.Adapters
+- uid: RateLimiter.Adapters.IRateLimiterAdapter
+  name: IRateLimiterAdapter
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html
+  commentId: T:RateLimiter.Adapters.IRateLimiterAdapter
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter
+  nameWithType: IRateLimiterAdapter
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  name: GetDebugInfo()
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_GetDebugInfo
+  commentId: M:RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo()
+  nameWithType: IRateLimiterAdapter.GetDebugInfo()
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo*
+  name: GetDebugInfo
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_GetDebugInfo_
+  commentId: Overload:RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.GetDebugInfo
+  nameWithType: IRateLimiterAdapter.GetDebugInfo
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  name: SetStrategy(IRateLimiter)
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_SetStrategy_RateLimiter_Interfaces_IRateLimiter_
+  commentId: M:RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  nameWithType: IRateLimiterAdapter.SetStrategy(IRateLimiter)
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy*
+  name: SetStrategy
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_SetStrategy_
+  commentId: Overload:RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.SetStrategy
+  nameWithType: IRateLimiterAdapter.SetStrategy
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  name: StrategyTypeName
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_StrategyTypeName
+  commentId: P:RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  nameWithType: IRateLimiterAdapter.StrategyTypeName
+- uid: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName*
+  name: StrategyTypeName
+  href: api/RateLimiter.Adapters.IRateLimiterAdapter.html#RateLimiter_Adapters_IRateLimiterAdapter_StrategyTypeName_
+  commentId: Overload:RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.IRateLimiterAdapter.StrategyTypeName
+  nameWithType: IRateLimiterAdapter.StrategyTypeName
+- uid: RateLimiter.Adapters.TokenBucketAdapter
+  name: TokenBucketAdapter
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html
+  commentId: T:RateLimiter.Adapters.TokenBucketAdapter
+  fullName: RateLimiter.Adapters.TokenBucketAdapter
+  nameWithType: TokenBucketAdapter
+- uid: RateLimiter.Adapters.TokenBucketAdapter.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name: TokenBucketAdapter(IOptions<RateLimiterOptions>)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name.vb: New(IOptions(Of RateLimiterOptions))
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.TokenBucketAdapter(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  fullName.vb: RateLimiter.Adapters.TokenBucketAdapter.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  nameWithType: TokenBucketAdapter.TokenBucketAdapter(IOptions<RateLimiterOptions>)
+  nameWithType.vb: TokenBucketAdapter.New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Adapters.TokenBucketAdapter.#ctor(System.Int32,System.Double)
+  name: TokenBucketAdapter(int, double)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter__ctor_System_Int32_System_Double_
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.#ctor(System.Int32,System.Double)
+  name.vb: New(Integer, Double)
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.TokenBucketAdapter(int, double)
+  fullName.vb: RateLimiter.Adapters.TokenBucketAdapter.New(Integer, Double)
+  nameWithType: TokenBucketAdapter.TokenBucketAdapter(int, double)
+  nameWithType.vb: TokenBucketAdapter.New(Integer, Double)
+- uid: RateLimiter.Adapters.TokenBucketAdapter.#ctor*
+  name: TokenBucketAdapter
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter__ctor_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.TokenBucketAdapter
+  fullName.vb: RateLimiter.Adapters.TokenBucketAdapter.New
+  nameWithType: TokenBucketAdapter.TokenBucketAdapter
+  nameWithType.vb: TokenBucketAdapter.New
+- uid: RateLimiter.Adapters.TokenBucketAdapter.CurrentTokens
+  name: CurrentTokens
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_CurrentTokens
+  commentId: P:RateLimiter.Adapters.TokenBucketAdapter.CurrentTokens
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.CurrentTokens
+  nameWithType: TokenBucketAdapter.CurrentTokens
+- uid: RateLimiter.Adapters.TokenBucketAdapter.CurrentTokens*
+  name: CurrentTokens
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_CurrentTokens_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.CurrentTokens
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.CurrentTokens
+  nameWithType: TokenBucketAdapter.CurrentTokens
+- uid: RateLimiter.Adapters.TokenBucketAdapter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: TokenBucketAdapter.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Adapters.TokenBucketAdapter.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.GetAvailablePermitsAsync
+  nameWithType: TokenBucketAdapter.GetAvailablePermitsAsync
+- uid: RateLimiter.Adapters.TokenBucketAdapter.GetDebugInfo
+  name: GetDebugInfo()
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_GetDebugInfo
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.GetDebugInfo
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.GetDebugInfo()
+  nameWithType: TokenBucketAdapter.GetDebugInfo()
+- uid: RateLimiter.Adapters.TokenBucketAdapter.GetDebugInfo*
+  name: GetDebugInfo
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_GetDebugInfo_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.GetDebugInfo
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.GetDebugInfo
+  nameWithType: TokenBucketAdapter.GetDebugInfo
+- uid: RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: TokenBucketAdapter.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: TokenBucketAdapter.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.GetWaitTimeAsync
+  nameWithType: TokenBucketAdapter.GetWaitTimeAsync
+- uid: RateLimiter.Adapters.TokenBucketAdapter.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: TokenBucketAdapter.ResetAsync(CancellationToken)
+- uid: RateLimiter.Adapters.TokenBucketAdapter.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_ResetAsync_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.ResetAsync
+  nameWithType: TokenBucketAdapter.ResetAsync
+- uid: RateLimiter.Adapters.TokenBucketAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  name: SetStrategy(IRateLimiter)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_SetStrategy_RateLimiter_Interfaces_IRateLimiter_
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  nameWithType: TokenBucketAdapter.SetStrategy(IRateLimiter)
+- uid: RateLimiter.Adapters.TokenBucketAdapter.SetStrategy*
+  name: SetStrategy
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_SetStrategy_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.SetStrategy
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.SetStrategy
+  nameWithType: TokenBucketAdapter.SetStrategy
+- uid: RateLimiter.Adapters.TokenBucketAdapter.StrategyTypeName
+  name: StrategyTypeName
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_StrategyTypeName
+  commentId: P:RateLimiter.Adapters.TokenBucketAdapter.StrategyTypeName
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.StrategyTypeName
+  nameWithType: TokenBucketAdapter.StrategyTypeName
+- uid: RateLimiter.Adapters.TokenBucketAdapter.StrategyTypeName*
+  name: StrategyTypeName
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_StrategyTypeName_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.StrategyTypeName
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.StrategyTypeName
+  nameWithType: TokenBucketAdapter.StrategyTypeName
+- uid: RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: TokenBucketAdapter.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: TokenBucketAdapter.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Adapters.TokenBucketAdapter.html#RateLimiter_Adapters_TokenBucketAdapter_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.TokenBucketAdapter.TryConsumeAsync
+  nameWithType: TokenBucketAdapter.TryConsumeAsync
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter
+  name: UniversalRateLimiterAdapter
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html
+  commentId: T:RateLimiter.Adapters.UniversalRateLimiterAdapter
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter
+  nameWithType: UniversalRateLimiterAdapter
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.#ctor(RateLimiter.Interfaces.IRateLimiter)
+  name: UniversalRateLimiterAdapter(IRateLimiter)
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter__ctor_RateLimiter_Interfaces_IRateLimiter_
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.#ctor(RateLimiter.Interfaces.IRateLimiter)
+  name.vb: New(IRateLimiter)
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.UniversalRateLimiterAdapter(RateLimiter.Interfaces.IRateLimiter)
+  fullName.vb: RateLimiter.Adapters.UniversalRateLimiterAdapter.New(RateLimiter.Interfaces.IRateLimiter)
+  nameWithType: UniversalRateLimiterAdapter.UniversalRateLimiterAdapter(IRateLimiter)
+  nameWithType.vb: UniversalRateLimiterAdapter.New(IRateLimiter)
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.#ctor*
+  name: UniversalRateLimiterAdapter
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter__ctor_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.UniversalRateLimiterAdapter
+  fullName.vb: RateLimiter.Adapters.UniversalRateLimiterAdapter.New
+  nameWithType: UniversalRateLimiterAdapter.UniversalRateLimiterAdapter
+  nameWithType.vb: UniversalRateLimiterAdapter.New
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: UniversalRateLimiterAdapter.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetAvailablePermitsAsync
+  nameWithType: UniversalRateLimiterAdapter.GetAvailablePermitsAsync
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetDebugInfo
+  name: GetDebugInfo()
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_GetDebugInfo
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.GetDebugInfo
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetDebugInfo()
+  nameWithType: UniversalRateLimiterAdapter.GetDebugInfo()
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetDebugInfo*
+  name: GetDebugInfo
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_GetDebugInfo_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.GetDebugInfo
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetDebugInfo
+  nameWithType: UniversalRateLimiterAdapter.GetDebugInfo
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: UniversalRateLimiterAdapter.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: UniversalRateLimiterAdapter.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.GetWaitTimeAsync
+  nameWithType: UniversalRateLimiterAdapter.GetWaitTimeAsync
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: UniversalRateLimiterAdapter.ResetAsync(CancellationToken)
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_ResetAsync_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.ResetAsync
+  nameWithType: UniversalRateLimiterAdapter.ResetAsync
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  name: SetStrategy(IRateLimiter)
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_SetStrategy_RateLimiter_Interfaces_IRateLimiter_
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  nameWithType: UniversalRateLimiterAdapter.SetStrategy(IRateLimiter)
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.SetStrategy*
+  name: SetStrategy
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_SetStrategy_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.SetStrategy
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.SetStrategy
+  nameWithType: UniversalRateLimiterAdapter.SetStrategy
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.StrategyTypeName
+  name: StrategyTypeName
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_StrategyTypeName
+  commentId: P:RateLimiter.Adapters.UniversalRateLimiterAdapter.StrategyTypeName
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.StrategyTypeName
+  nameWithType: UniversalRateLimiterAdapter.StrategyTypeName
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.StrategyTypeName*
+  name: StrategyTypeName
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_StrategyTypeName_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.StrategyTypeName
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.StrategyTypeName
+  nameWithType: UniversalRateLimiterAdapter.StrategyTypeName
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: UniversalRateLimiterAdapter.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: UniversalRateLimiterAdapter.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Adapters.UniversalRateLimiterAdapter.html#RateLimiter_Adapters_UniversalRateLimiterAdapter_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Adapters.UniversalRateLimiterAdapter.TryConsumeAsync
+  nameWithType: UniversalRateLimiterAdapter.TryConsumeAsync
+- uid: RateLimiter.Configuration
+  name: RateLimiter.Configuration
+  href: api/RateLimiter.Configuration.html
+  commentId: N:RateLimiter.Configuration
+  fullName: RateLimiter.Configuration
+  nameWithType: RateLimiter.Configuration
+- uid: RateLimiter.Configuration.FixedWindowOptions
+  name: FixedWindowOptions
+  href: api/RateLimiter.Configuration.FixedWindowOptions.html
+  commentId: T:RateLimiter.Configuration.FixedWindowOptions
+  fullName: RateLimiter.Configuration.FixedWindowOptions
+  nameWithType: FixedWindowOptions
+- uid: RateLimiter.Configuration.FixedWindowOptions.MaxRequests
+  name: MaxRequests
+  href: api/RateLimiter.Configuration.FixedWindowOptions.html#RateLimiter_Configuration_FixedWindowOptions_MaxRequests
+  commentId: P:RateLimiter.Configuration.FixedWindowOptions.MaxRequests
+  fullName: RateLimiter.Configuration.FixedWindowOptions.MaxRequests
+  nameWithType: FixedWindowOptions.MaxRequests
+- uid: RateLimiter.Configuration.FixedWindowOptions.MaxRequests*
+  name: MaxRequests
+  href: api/RateLimiter.Configuration.FixedWindowOptions.html#RateLimiter_Configuration_FixedWindowOptions_MaxRequests_
+  commentId: Overload:RateLimiter.Configuration.FixedWindowOptions.MaxRequests
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.FixedWindowOptions.MaxRequests
+  nameWithType: FixedWindowOptions.MaxRequests
+- uid: RateLimiter.Configuration.FixedWindowOptions.WindowSizeInSeconds
+  name: WindowSizeInSeconds
+  href: api/RateLimiter.Configuration.FixedWindowOptions.html#RateLimiter_Configuration_FixedWindowOptions_WindowSizeInSeconds
+  commentId: P:RateLimiter.Configuration.FixedWindowOptions.WindowSizeInSeconds
+  fullName: RateLimiter.Configuration.FixedWindowOptions.WindowSizeInSeconds
+  nameWithType: FixedWindowOptions.WindowSizeInSeconds
+- uid: RateLimiter.Configuration.FixedWindowOptions.WindowSizeInSeconds*
+  name: WindowSizeInSeconds
+  href: api/RateLimiter.Configuration.FixedWindowOptions.html#RateLimiter_Configuration_FixedWindowOptions_WindowSizeInSeconds_
+  commentId: Overload:RateLimiter.Configuration.FixedWindowOptions.WindowSizeInSeconds
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.FixedWindowOptions.WindowSizeInSeconds
+  nameWithType: FixedWindowOptions.WindowSizeInSeconds
+- uid: RateLimiter.Configuration.RateLimiterOptions
+  name: RateLimiterOptions
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html
+  commentId: T:RateLimiter.Configuration.RateLimiterOptions
+  fullName: RateLimiter.Configuration.RateLimiterOptions
+  nameWithType: RateLimiterOptions
+- uid: RateLimiter.Configuration.RateLimiterOptions.FixedWindow
+  name: FixedWindow
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_FixedWindow
+  commentId: P:RateLimiter.Configuration.RateLimiterOptions.FixedWindow
+  fullName: RateLimiter.Configuration.RateLimiterOptions.FixedWindow
+  nameWithType: RateLimiterOptions.FixedWindow
+- uid: RateLimiter.Configuration.RateLimiterOptions.FixedWindow*
+  name: FixedWindow
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_FixedWindow_
+  commentId: Overload:RateLimiter.Configuration.RateLimiterOptions.FixedWindow
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.RateLimiterOptions.FixedWindow
+  nameWithType: RateLimiterOptions.FixedWindow
+- uid: RateLimiter.Configuration.RateLimiterOptions.SectionName
+  name: SectionName
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_SectionName
+  commentId: F:RateLimiter.Configuration.RateLimiterOptions.SectionName
+  fullName: RateLimiter.Configuration.RateLimiterOptions.SectionName
+  nameWithType: RateLimiterOptions.SectionName
+- uid: RateLimiter.Configuration.RateLimiterOptions.SlidingWindow
+  name: SlidingWindow
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_SlidingWindow
+  commentId: P:RateLimiter.Configuration.RateLimiterOptions.SlidingWindow
+  fullName: RateLimiter.Configuration.RateLimiterOptions.SlidingWindow
+  nameWithType: RateLimiterOptions.SlidingWindow
+- uid: RateLimiter.Configuration.RateLimiterOptions.SlidingWindow*
+  name: SlidingWindow
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_SlidingWindow_
+  commentId: Overload:RateLimiter.Configuration.RateLimiterOptions.SlidingWindow
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.RateLimiterOptions.SlidingWindow
+  nameWithType: RateLimiterOptions.SlidingWindow
+- uid: RateLimiter.Configuration.RateLimiterOptions.TokenBucket
+  name: TokenBucket
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_TokenBucket
+  commentId: P:RateLimiter.Configuration.RateLimiterOptions.TokenBucket
+  fullName: RateLimiter.Configuration.RateLimiterOptions.TokenBucket
+  nameWithType: RateLimiterOptions.TokenBucket
+- uid: RateLimiter.Configuration.RateLimiterOptions.TokenBucket*
+  name: TokenBucket
+  href: api/RateLimiter.Configuration.RateLimiterOptions.html#RateLimiter_Configuration_RateLimiterOptions_TokenBucket_
+  commentId: Overload:RateLimiter.Configuration.RateLimiterOptions.TokenBucket
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.RateLimiterOptions.TokenBucket
+  nameWithType: RateLimiterOptions.TokenBucket
+- uid: RateLimiter.Configuration.SlidingWindowOptions
+  name: SlidingWindowOptions
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html
+  commentId: T:RateLimiter.Configuration.SlidingWindowOptions
+  fullName: RateLimiter.Configuration.SlidingWindowOptions
+  nameWithType: SlidingWindowOptions
+- uid: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  name: MaxRequests
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_MaxRequests
+  commentId: P:RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  nameWithType: SlidingWindowOptions.MaxRequests
+- uid: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests*
+  name: MaxRequests
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_MaxRequests_
+  commentId: Overload:RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.MaxRequests
+  nameWithType: SlidingWindowOptions.MaxRequests
+- uid: RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  name: SubWindows
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_SubWindows
+  commentId: P:RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  nameWithType: SlidingWindowOptions.SubWindows
+- uid: RateLimiter.Configuration.SlidingWindowOptions.SubWindows*
+  name: SubWindows
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_SubWindows_
+  commentId: Overload:RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.SubWindows
+  nameWithType: SlidingWindowOptions.SubWindows
+- uid: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  name: WindowSizeInSeconds
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_WindowSizeInSeconds
+  commentId: P:RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  nameWithType: SlidingWindowOptions.WindowSizeInSeconds
+- uid: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds*
+  name: WindowSizeInSeconds
+  href: api/RateLimiter.Configuration.SlidingWindowOptions.html#RateLimiter_Configuration_SlidingWindowOptions_WindowSizeInSeconds_
+  commentId: Overload:RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.SlidingWindowOptions.WindowSizeInSeconds
+  nameWithType: SlidingWindowOptions.WindowSizeInSeconds
+- uid: RateLimiter.Configuration.TokenBucketOptions
+  name: TokenBucketOptions
+  href: api/RateLimiter.Configuration.TokenBucketOptions.html
+  commentId: T:RateLimiter.Configuration.TokenBucketOptions
+  fullName: RateLimiter.Configuration.TokenBucketOptions
+  nameWithType: TokenBucketOptions
+- uid: RateLimiter.Configuration.TokenBucketOptions.Capacity
+  name: Capacity
+  href: api/RateLimiter.Configuration.TokenBucketOptions.html#RateLimiter_Configuration_TokenBucketOptions_Capacity
+  commentId: P:RateLimiter.Configuration.TokenBucketOptions.Capacity
+  fullName: RateLimiter.Configuration.TokenBucketOptions.Capacity
+  nameWithType: TokenBucketOptions.Capacity
+- uid: RateLimiter.Configuration.TokenBucketOptions.Capacity*
+  name: Capacity
+  href: api/RateLimiter.Configuration.TokenBucketOptions.html#RateLimiter_Configuration_TokenBucketOptions_Capacity_
+  commentId: Overload:RateLimiter.Configuration.TokenBucketOptions.Capacity
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.TokenBucketOptions.Capacity
+  nameWithType: TokenBucketOptions.Capacity
+- uid: RateLimiter.Configuration.TokenBucketOptions.RefillRate
+  name: RefillRate
+  href: api/RateLimiter.Configuration.TokenBucketOptions.html#RateLimiter_Configuration_TokenBucketOptions_RefillRate
+  commentId: P:RateLimiter.Configuration.TokenBucketOptions.RefillRate
+  fullName: RateLimiter.Configuration.TokenBucketOptions.RefillRate
+  nameWithType: TokenBucketOptions.RefillRate
+- uid: RateLimiter.Configuration.TokenBucketOptions.RefillRate*
+  name: RefillRate
+  href: api/RateLimiter.Configuration.TokenBucketOptions.html#RateLimiter_Configuration_TokenBucketOptions_RefillRate_
+  commentId: Overload:RateLimiter.Configuration.TokenBucketOptions.RefillRate
+  isSpec: "True"
+  fullName: RateLimiter.Configuration.TokenBucketOptions.RefillRate
+  nameWithType: TokenBucketOptions.RefillRate
+- uid: RateLimiter.Extensions
+  name: RateLimiter.Extensions
+  href: api/RateLimiter.Extensions.html
+  commentId: N:RateLimiter.Extensions
+  fullName: RateLimiter.Extensions
+  nameWithType: RateLimiter.Extensions
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  href: api/RateLimiter.Extensions.ServiceCollectionExtensions.html
+  commentId: T:RateLimiter.Extensions.ServiceCollectionExtensions
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+  name: AddRateLimiter(IServiceCollection, IConfiguration)
+  href: api/RateLimiter.Extensions.ServiceCollectionExtensions.html#RateLimiter_Extensions_ServiceCollectionExtensions_AddRateLimiter_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_
+  commentId: M:RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration)
+  nameWithType: ServiceCollectionExtensions.AddRateLimiter(IServiceCollection, IConfiguration)
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,RateLimiter.Services.RateLimiterStrategyType)
+  name: AddRateLimiter(IServiceCollection, IConfiguration, RateLimiterStrategyType)
+  href: api/RateLimiter.Extensions.ServiceCollectionExtensions.html#RateLimiter_Extensions_ServiceCollectionExtensions_AddRateLimiter_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_RateLimiter_Services_RateLimiterStrategyType_
+  commentId: M:RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,RateLimiter.Services.RateLimiterStrategyType)
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, RateLimiter.Services.RateLimiterStrategyType)
+  nameWithType: ServiceCollectionExtensions.AddRateLimiter(IServiceCollection, IConfiguration, RateLimiterStrategyType)
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter*
+  name: AddRateLimiter
+  href: api/RateLimiter.Extensions.ServiceCollectionExtensions.html#RateLimiter_Extensions_ServiceCollectionExtensions_AddRateLimiter_
+  commentId: Overload:RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter
+  isSpec: "True"
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiter
+  nameWithType: ServiceCollectionExtensions.AddRateLimiter
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiterWithAdapter(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,RateLimiter.Services.RateLimiterStrategyType)
+  name: AddRateLimiterWithAdapter(IServiceCollection, IConfiguration, RateLimiterStrategyType)
+  href: api/RateLimiter.Extensions.ServiceCollectionExtensions.html#RateLimiter_Extensions_ServiceCollectionExtensions_AddRateLimiterWithAdapter_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_RateLimiter_Services_RateLimiterStrategyType_
+  commentId: M:RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiterWithAdapter(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,RateLimiter.Services.RateLimiterStrategyType)
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiterWithAdapter(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, RateLimiter.Services.RateLimiterStrategyType)
+  nameWithType: ServiceCollectionExtensions.AddRateLimiterWithAdapter(IServiceCollection, IConfiguration, RateLimiterStrategyType)
+- uid: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiterWithAdapter*
+  name: AddRateLimiterWithAdapter
+  href: api/RateLimiter.Extensions.ServiceCollectionExtensions.html#RateLimiter_Extensions_ServiceCollectionExtensions_AddRateLimiterWithAdapter_
+  commentId: Overload:RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiterWithAdapter
+  isSpec: "True"
+  fullName: RateLimiter.Extensions.ServiceCollectionExtensions.AddRateLimiterWithAdapter
+  nameWithType: ServiceCollectionExtensions.AddRateLimiterWithAdapter
+- uid: RateLimiter.Implementations
+  name: RateLimiter.Implementations
+  href: api/RateLimiter.Implementations.html
+  commentId: N:RateLimiter.Implementations
+  fullName: RateLimiter.Implementations
+  nameWithType: RateLimiter.Implementations
+- uid: RateLimiter.Implementations.FixedWindowStrategy
+  name: FixedWindowStrategy
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html
+  commentId: T:RateLimiter.Implementations.FixedWindowStrategy
+  fullName: RateLimiter.Implementations.FixedWindowStrategy
+  nameWithType: FixedWindowStrategy
+- uid: RateLimiter.Implementations.FixedWindowStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name: FixedWindowStrategy(IOptions<RateLimiterOptions>)
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  commentId: M:RateLimiter.Implementations.FixedWindowStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name.vb: New(IOptions(Of RateLimiterOptions))
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.FixedWindowStrategy(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  fullName.vb: RateLimiter.Implementations.FixedWindowStrategy.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  nameWithType: FixedWindowStrategy.FixedWindowStrategy(IOptions<RateLimiterOptions>)
+  nameWithType.vb: FixedWindowStrategy.New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Implementations.FixedWindowStrategy.#ctor*
+  name: FixedWindowStrategy
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy__ctor_
+  commentId: Overload:RateLimiter.Implementations.FixedWindowStrategy.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.FixedWindowStrategy
+  fullName.vb: RateLimiter.Implementations.FixedWindowStrategy.New
+  nameWithType: FixedWindowStrategy.FixedWindowStrategy
+  nameWithType.vb: FixedWindowStrategy.New
+- uid: RateLimiter.Implementations.FixedWindowStrategy.CurrentWindow
+  name: CurrentWindow
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_CurrentWindow
+  commentId: P:RateLimiter.Implementations.FixedWindowStrategy.CurrentWindow
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.CurrentWindow
+  nameWithType: FixedWindowStrategy.CurrentWindow
+- uid: RateLimiter.Implementations.FixedWindowStrategy.CurrentWindow*
+  name: CurrentWindow
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_CurrentWindow_
+  commentId: Overload:RateLimiter.Implementations.FixedWindowStrategy.CurrentWindow
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.CurrentWindow
+  nameWithType: FixedWindowStrategy.CurrentWindow
+- uid: RateLimiter.Implementations.FixedWindowStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.FixedWindowStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: FixedWindowStrategy.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Implementations.FixedWindowStrategy.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Implementations.FixedWindowStrategy.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.GetAvailablePermitsAsync
+  nameWithType: FixedWindowStrategy.GetAvailablePermitsAsync
+- uid: RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: FixedWindowStrategy.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: FixedWindowStrategy.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.GetWaitTimeAsync
+  nameWithType: FixedWindowStrategy.GetWaitTimeAsync
+- uid: RateLimiter.Implementations.FixedWindowStrategy.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.FixedWindowStrategy.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: FixedWindowStrategy.ResetAsync(CancellationToken)
+- uid: RateLimiter.Implementations.FixedWindowStrategy.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_ResetAsync_
+  commentId: Overload:RateLimiter.Implementations.FixedWindowStrategy.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.ResetAsync
+  nameWithType: FixedWindowStrategy.ResetAsync
+- uid: RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: FixedWindowStrategy.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: FixedWindowStrategy.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Implementations.FixedWindowStrategy.html#RateLimiter_Implementations_FixedWindowStrategy_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.FixedWindowStrategy.TryConsumeAsync
+  nameWithType: FixedWindowStrategy.TryConsumeAsync
+- uid: RateLimiter.Implementations.SlidingWindowStrategy
+  name: SlidingWindowStrategy
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html
+  commentId: T:RateLimiter.Implementations.SlidingWindowStrategy
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy
+  nameWithType: SlidingWindowStrategy
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name: SlidingWindowStrategy(IOptions<RateLimiterOptions>)
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  commentId: M:RateLimiter.Implementations.SlidingWindowStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name.vb: New(IOptions(Of RateLimiterOptions))
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.SlidingWindowStrategy(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  fullName.vb: RateLimiter.Implementations.SlidingWindowStrategy.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  nameWithType: SlidingWindowStrategy.SlidingWindowStrategy(IOptions<RateLimiterOptions>)
+  nameWithType.vb: SlidingWindowStrategy.New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.#ctor*
+  name: SlidingWindowStrategy
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy__ctor_
+  commentId: Overload:RateLimiter.Implementations.SlidingWindowStrategy.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.SlidingWindowStrategy
+  fullName.vb: RateLimiter.Implementations.SlidingWindowStrategy.New
+  nameWithType: SlidingWindowStrategy.SlidingWindowStrategy
+  nameWithType.vb: SlidingWindowStrategy.New
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.CurrentSubWindowCounts
+  name: CurrentSubWindowCounts
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_CurrentSubWindowCounts
+  commentId: P:RateLimiter.Implementations.SlidingWindowStrategy.CurrentSubWindowCounts
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.CurrentSubWindowCounts
+  nameWithType: SlidingWindowStrategy.CurrentSubWindowCounts
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.CurrentSubWindowCounts*
+  name: CurrentSubWindowCounts
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_CurrentSubWindowCounts_
+  commentId: Overload:RateLimiter.Implementations.SlidingWindowStrategy.CurrentSubWindowCounts
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.CurrentSubWindowCounts
+  nameWithType: SlidingWindowStrategy.CurrentSubWindowCounts
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.SlidingWindowStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: SlidingWindowStrategy.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Implementations.SlidingWindowStrategy.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.GetAvailablePermitsAsync
+  nameWithType: SlidingWindowStrategy.GetAvailablePermitsAsync
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: SlidingWindowStrategy.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: SlidingWindowStrategy.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.GetWaitTimeAsync
+  nameWithType: SlidingWindowStrategy.GetWaitTimeAsync
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.SlidingWindowStrategy.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: SlidingWindowStrategy.ResetAsync(CancellationToken)
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_ResetAsync_
+  commentId: Overload:RateLimiter.Implementations.SlidingWindowStrategy.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.ResetAsync
+  nameWithType: SlidingWindowStrategy.ResetAsync
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: SlidingWindowStrategy.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: SlidingWindowStrategy.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Implementations.SlidingWindowStrategy.html#RateLimiter_Implementations_SlidingWindowStrategy_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.SlidingWindowStrategy.TryConsumeAsync
+  nameWithType: SlidingWindowStrategy.TryConsumeAsync
+- uid: RateLimiter.Implementations.TokenBucket
+  name: TokenBucket
+  href: api/RateLimiter.Implementations.TokenBucket.html
+  commentId: T:RateLimiter.Implementations.TokenBucket
+  fullName: RateLimiter.Implementations.TokenBucket
+  nameWithType: TokenBucket
+- uid: RateLimiter.Implementations.TokenBucket.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name: TokenBucket(IOptions<RateLimiterOptions>)
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  commentId: M:RateLimiter.Implementations.TokenBucket.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name.vb: New(IOptions(Of RateLimiterOptions))
+  fullName: RateLimiter.Implementations.TokenBucket.TokenBucket(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  fullName.vb: RateLimiter.Implementations.TokenBucket.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  nameWithType: TokenBucket.TokenBucket(IOptions<RateLimiterOptions>)
+  nameWithType.vb: TokenBucket.New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Implementations.TokenBucket.#ctor*
+  name: TokenBucket
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket__ctor_
+  commentId: Overload:RateLimiter.Implementations.TokenBucket.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Implementations.TokenBucket.TokenBucket
+  fullName.vb: RateLimiter.Implementations.TokenBucket.New
+  nameWithType: TokenBucket.TokenBucket
+  nameWithType.vb: TokenBucket.New
+- uid: RateLimiter.Implementations.TokenBucket.CurrentTokens
+  name: CurrentTokens
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_CurrentTokens
+  commentId: P:RateLimiter.Implementations.TokenBucket.CurrentTokens
+  fullName: RateLimiter.Implementations.TokenBucket.CurrentTokens
+  nameWithType: TokenBucket.CurrentTokens
+- uid: RateLimiter.Implementations.TokenBucket.CurrentTokens*
+  name: CurrentTokens
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_CurrentTokens_
+  commentId: Overload:RateLimiter.Implementations.TokenBucket.CurrentTokens
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucket.CurrentTokens
+  nameWithType: TokenBucket.CurrentTokens
+- uid: RateLimiter.Implementations.TokenBucket.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucket.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucket.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: TokenBucket.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucket.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucket.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucket.GetAvailablePermitsAsync
+  nameWithType: TokenBucket.GetAvailablePermitsAsync
+- uid: RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: TokenBucket.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: TokenBucket.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucket.GetWaitTimeAsync
+  nameWithType: TokenBucket.GetWaitTimeAsync
+- uid: RateLimiter.Implementations.TokenBucket.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucket.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucket.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: TokenBucket.ResetAsync(CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucket.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_ResetAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucket.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucket.ResetAsync
+  nameWithType: TokenBucket.ResetAsync
+- uid: RateLimiter.Implementations.TokenBucket.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucket.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucket.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.TokenBucket.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: TokenBucket.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: TokenBucket.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucket.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Implementations.TokenBucket.html#RateLimiter_Implementations_TokenBucket_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucket.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucket.TryConsumeAsync
+  nameWithType: TokenBucket.TryConsumeAsync
+- uid: RateLimiter.Implementations.TokenBucketStrategy
+  name: TokenBucketStrategy
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html
+  commentId: T:RateLimiter.Implementations.TokenBucketStrategy
+  fullName: RateLimiter.Implementations.TokenBucketStrategy
+  nameWithType: TokenBucketStrategy
+- uid: RateLimiter.Implementations.TokenBucketStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name: TokenBucketStrategy(IOptions<RateLimiterOptions>)
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name.vb: New(IOptions(Of RateLimiterOptions))
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TokenBucketStrategy(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  nameWithType: TokenBucketStrategy.TokenBucketStrategy(IOptions<RateLimiterOptions>)
+  nameWithType.vb: TokenBucketStrategy.New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Implementations.TokenBucketStrategy.#ctor*
+  name: TokenBucketStrategy
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy__ctor_
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TokenBucketStrategy
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.New
+  nameWithType: TokenBucketStrategy.TokenBucketStrategy
+  nameWithType.vb: TokenBucketStrategy.New
+- uid: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  name: CurrentTokens
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_CurrentTokens
+  commentId: P:RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  nameWithType: TokenBucketStrategy.CurrentTokens
+- uid: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens*
+  name: CurrentTokens
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_CurrentTokens_
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.CurrentTokens
+  nameWithType: TokenBucketStrategy.CurrentTokens
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: TokenBucketStrategy.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetAvailablePermitsAsync
+  nameWithType: TokenBucketStrategy.GetAvailablePermitsAsync
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: TokenBucketStrategy.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: TokenBucketStrategy.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.GetWaitTimeAsync
+  nameWithType: TokenBucketStrategy.GetWaitTimeAsync
+- uid: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: TokenBucketStrategy.ResetAsync(CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_ResetAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.ResetAsync
+  nameWithType: TokenBucketStrategy.ResetAsync
+- uid: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: TokenBucketStrategy.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: TokenBucketStrategy.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Implementations.TokenBucketStrategy.html#RateLimiter_Implementations_TokenBucketStrategy_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Implementations.TokenBucketStrategy.TryConsumeAsync
+  nameWithType: TokenBucketStrategy.TryConsumeAsync
+- uid: RateLimiter.Interfaces
+  name: RateLimiter.Interfaces
+  href: api/RateLimiter.Interfaces.html
+  commentId: N:RateLimiter.Interfaces
+  fullName: RateLimiter.Interfaces
+  nameWithType: RateLimiter.Interfaces
+- uid: RateLimiter.Interfaces.IRateLimiter
+  name: IRateLimiter
+  href: api/RateLimiter.Interfaces.IRateLimiter.html
+  commentId: T:RateLimiter.Interfaces.IRateLimiter
+  fullName: RateLimiter.Interfaces.IRateLimiter
+  nameWithType: IRateLimiter
+- uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: IRateLimiter.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetAvailablePermitsAsync
+  nameWithType: IRateLimiter.GetAvailablePermitsAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: IRateLimiter.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: IRateLimiter.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Interfaces.IRateLimiter.GetWaitTimeAsync
+  nameWithType: IRateLimiter.GetWaitTimeAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: IRateLimiter.ResetAsync(CancellationToken)
+- uid: RateLimiter.Interfaces.IRateLimiter.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_ResetAsync_
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Interfaces.IRateLimiter.ResetAsync
+  nameWithType: IRateLimiter.ResetAsync
+- uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: IRateLimiter.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: IRateLimiter.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Interfaces.IRateLimiter.html#RateLimiter_Interfaces_IRateLimiter_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Interfaces.IRateLimiter.TryConsumeAsync
+  nameWithType: IRateLimiter.TryConsumeAsync
+- uid: RateLimiter.Services
+  name: RateLimiter.Services
+  href: api/RateLimiter.Services.html
+  commentId: N:RateLimiter.Services
+  fullName: RateLimiter.Services
+  nameWithType: RateLimiter.Services
+- uid: RateLimiter.Services.RateLimiterContext
+  name: RateLimiterContext
+  href: api/RateLimiter.Services.RateLimiterContext.html
+  commentId: T:RateLimiter.Services.RateLimiterContext
+  fullName: RateLimiter.Services.RateLimiterContext
+  nameWithType: RateLimiterContext
+- uid: RateLimiter.Services.RateLimiterContext.#ctor(RateLimiter.Interfaces.IRateLimiter)
+  name: RateLimiterContext(IRateLimiter)
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext__ctor_RateLimiter_Interfaces_IRateLimiter_
+  commentId: M:RateLimiter.Services.RateLimiterContext.#ctor(RateLimiter.Interfaces.IRateLimiter)
+  name.vb: New(IRateLimiter)
+  fullName: RateLimiter.Services.RateLimiterContext.RateLimiterContext(RateLimiter.Interfaces.IRateLimiter)
+  fullName.vb: RateLimiter.Services.RateLimiterContext.New(RateLimiter.Interfaces.IRateLimiter)
+  nameWithType: RateLimiterContext.RateLimiterContext(IRateLimiter)
+  nameWithType.vb: RateLimiterContext.New(IRateLimiter)
+- uid: RateLimiter.Services.RateLimiterContext.#ctor*
+  name: RateLimiterContext
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext__ctor_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Services.RateLimiterContext.RateLimiterContext
+  fullName.vb: RateLimiter.Services.RateLimiterContext.New
+  nameWithType: RateLimiterContext.RateLimiterContext
+  nameWithType.vb: RateLimiterContext.New
+- uid: RateLimiter.Services.RateLimiterContext.CurrentStrategyName
+  name: CurrentStrategyName
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_CurrentStrategyName
+  commentId: P:RateLimiter.Services.RateLimiterContext.CurrentStrategyName
+  fullName: RateLimiter.Services.RateLimiterContext.CurrentStrategyName
+  nameWithType: RateLimiterContext.CurrentStrategyName
+- uid: RateLimiter.Services.RateLimiterContext.CurrentStrategyName*
+  name: CurrentStrategyName
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_CurrentStrategyName_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.CurrentStrategyName
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterContext.CurrentStrategyName
+  nameWithType: RateLimiterContext.CurrentStrategyName
+- uid: RateLimiter.Services.RateLimiterContext.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  name: GetAvailablePermitsAsync(CancellationToken)
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_GetAvailablePermitsAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Services.RateLimiterContext.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Services.RateLimiterContext.GetAvailablePermitsAsync(System.Threading.CancellationToken)
+  nameWithType: RateLimiterContext.GetAvailablePermitsAsync(CancellationToken)
+- uid: RateLimiter.Services.RateLimiterContext.GetAvailablePermitsAsync*
+  name: GetAvailablePermitsAsync
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_GetAvailablePermitsAsync_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.GetAvailablePermitsAsync
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterContext.GetAvailablePermitsAsync
+  nameWithType: RateLimiterContext.GetAvailablePermitsAsync
+- uid: RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name: GetWaitTimeAsync(int, CancellationToken)
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_GetWaitTimeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: GetWaitTimeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: RateLimiterContext.GetWaitTimeAsync(int, CancellationToken)
+  nameWithType.vb: RateLimiterContext.GetWaitTimeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync*
+  name: GetWaitTimeAsync
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_GetWaitTimeAsync_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterContext.GetWaitTimeAsync
+  nameWithType: RateLimiterContext.GetWaitTimeAsync
+- uid: RateLimiter.Services.RateLimiterContext.ResetAsync(System.Threading.CancellationToken)
+  name: ResetAsync(CancellationToken)
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_ResetAsync_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Services.RateLimiterContext.ResetAsync(System.Threading.CancellationToken)
+  fullName: RateLimiter.Services.RateLimiterContext.ResetAsync(System.Threading.CancellationToken)
+  nameWithType: RateLimiterContext.ResetAsync(CancellationToken)
+- uid: RateLimiter.Services.RateLimiterContext.ResetAsync*
+  name: ResetAsync
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_ResetAsync_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.ResetAsync
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterContext.ResetAsync
+  nameWithType: RateLimiterContext.ResetAsync
+- uid: RateLimiter.Services.RateLimiterContext.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  name: SetStrategy(IRateLimiter)
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_SetStrategy_RateLimiter_Interfaces_IRateLimiter_
+  commentId: M:RateLimiter.Services.RateLimiterContext.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  fullName: RateLimiter.Services.RateLimiterContext.SetStrategy(RateLimiter.Interfaces.IRateLimiter)
+  nameWithType: RateLimiterContext.SetStrategy(IRateLimiter)
+- uid: RateLimiter.Services.RateLimiterContext.SetStrategy*
+  name: SetStrategy
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_SetStrategy_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.SetStrategy
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterContext.SetStrategy
+  nameWithType: RateLimiterContext.SetStrategy
+- uid: RateLimiter.Services.RateLimiterContext.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name: TryConsumeAsync(int, CancellationToken)
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_TryConsumeAsync_System_Int32_System_Threading_CancellationToken_
+  commentId: M:RateLimiter.Services.RateLimiterContext.TryConsumeAsync(System.Int32,System.Threading.CancellationToken)
+  name.vb: TryConsumeAsync(Integer, CancellationToken)
+  fullName: RateLimiter.Services.RateLimiterContext.TryConsumeAsync(int, System.Threading.CancellationToken)
+  fullName.vb: RateLimiter.Services.RateLimiterContext.TryConsumeAsync(Integer, System.Threading.CancellationToken)
+  nameWithType: RateLimiterContext.TryConsumeAsync(int, CancellationToken)
+  nameWithType.vb: RateLimiterContext.TryConsumeAsync(Integer, CancellationToken)
+- uid: RateLimiter.Services.RateLimiterContext.TryConsumeAsync*
+  name: TryConsumeAsync
+  href: api/RateLimiter.Services.RateLimiterContext.html#RateLimiter_Services_RateLimiterContext_TryConsumeAsync_
+  commentId: Overload:RateLimiter.Services.RateLimiterContext.TryConsumeAsync
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterContext.TryConsumeAsync
+  nameWithType: RateLimiterContext.TryConsumeAsync
+- uid: RateLimiter.Services.RateLimiterFactory
+  name: RateLimiterFactory
+  href: api/RateLimiter.Services.RateLimiterFactory.html
+  commentId: T:RateLimiter.Services.RateLimiterFactory
+  fullName: RateLimiter.Services.RateLimiterFactory
+  nameWithType: RateLimiterFactory
+- uid: RateLimiter.Services.RateLimiterFactory.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name: RateLimiterFactory(IOptions<RateLimiterOptions>)
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory__ctor_Microsoft_Extensions_Options_IOptions_RateLimiter_Configuration_RateLimiterOptions__
+  commentId: M:RateLimiter.Services.RateLimiterFactory.#ctor(Microsoft.Extensions.Options.IOptions{RateLimiter.Configuration.RateLimiterOptions})
+  name.vb: New(IOptions(Of RateLimiterOptions))
+  fullName: RateLimiter.Services.RateLimiterFactory.RateLimiterFactory(Microsoft.Extensions.Options.IOptions<RateLimiter.Configuration.RateLimiterOptions>)
+  fullName.vb: RateLimiter.Services.RateLimiterFactory.New(Microsoft.Extensions.Options.IOptions(Of RateLimiter.Configuration.RateLimiterOptions))
+  nameWithType: RateLimiterFactory.RateLimiterFactory(IOptions<RateLimiterOptions>)
+  nameWithType.vb: RateLimiterFactory.New(IOptions(Of RateLimiterOptions))
+- uid: RateLimiter.Services.RateLimiterFactory.#ctor*
+  name: RateLimiterFactory
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory__ctor_
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: RateLimiter.Services.RateLimiterFactory.RateLimiterFactory
+  fullName.vb: RateLimiter.Services.RateLimiterFactory.New
+  nameWithType: RateLimiterFactory.RateLimiterFactory
+  nameWithType.vb: RateLimiterFactory.New
+- uid: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  name: CreateFixedWindow()
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateFixedWindow
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow()
+  nameWithType: RateLimiterFactory.CreateFixedWindow()
+- uid: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow*
+  name: CreateFixedWindow
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateFixedWindow_
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateFixedWindow
+  nameWithType: RateLimiterFactory.CreateFixedWindow
+- uid: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  name: CreateSlidingWindow()
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateSlidingWindow
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow()
+  nameWithType: RateLimiterFactory.CreateSlidingWindow()
+- uid: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow*
+  name: CreateSlidingWindow
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateSlidingWindow_
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateSlidingWindow
+  nameWithType: RateLimiterFactory.CreateSlidingWindow
+- uid: RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  name: CreateStrategy(RateLimiterStrategyType)
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateStrategy_RateLimiter_Services_RateLimiterStrategyType_
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateStrategy(RateLimiter.Services.RateLimiterStrategyType)
+  nameWithType: RateLimiterFactory.CreateStrategy(RateLimiterStrategyType)
+- uid: RateLimiter.Services.RateLimiterFactory.CreateStrategy*
+  name: CreateStrategy
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateStrategy_
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateStrategy
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateStrategy
+  nameWithType: RateLimiterFactory.CreateStrategy
+- uid: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  name: CreateTokenBucket()
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateTokenBucket
+  commentId: M:RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket()
+  nameWithType: RateLimiterFactory.CreateTokenBucket()
+- uid: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket*
+  name: CreateTokenBucket
+  href: api/RateLimiter.Services.RateLimiterFactory.html#RateLimiter_Services_RateLimiterFactory_CreateTokenBucket_
+  commentId: Overload:RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  isSpec: "True"
+  fullName: RateLimiter.Services.RateLimiterFactory.CreateTokenBucket
+  nameWithType: RateLimiterFactory.CreateTokenBucket
+- uid: RateLimiter.Services.RateLimiterStrategyType
+  name: RateLimiterStrategyType
+  href: api/RateLimiter.Services.RateLimiterStrategyType.html
+  commentId: T:RateLimiter.Services.RateLimiterStrategyType
+  fullName: RateLimiter.Services.RateLimiterStrategyType
+  nameWithType: RateLimiterStrategyType
+- uid: RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  name: FixedWindow
+  href: api/RateLimiter.Services.RateLimiterStrategyType.html#RateLimiter_Services_RateLimiterStrategyType_FixedWindow
+  commentId: F:RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  fullName: RateLimiter.Services.RateLimiterStrategyType.FixedWindow
+  nameWithType: RateLimiterStrategyType.FixedWindow
+- uid: RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  name: SlidingWindow
+  href: api/RateLimiter.Services.RateLimiterStrategyType.html#RateLimiter_Services_RateLimiterStrategyType_SlidingWindow
+  commentId: F:RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  fullName: RateLimiter.Services.RateLimiterStrategyType.SlidingWindow
+  nameWithType: RateLimiterStrategyType.SlidingWindow
+- uid: RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  name: TokenBucket
+  href: api/RateLimiter.Services.RateLimiterStrategyType.html#RateLimiter_Services_RateLimiterStrategyType_TokenBucket
+  commentId: F:RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  fullName: RateLimiter.Services.RateLimiterStrategyType.TokenBucket
+  nameWithType: RateLimiterStrategyType.TokenBucket
