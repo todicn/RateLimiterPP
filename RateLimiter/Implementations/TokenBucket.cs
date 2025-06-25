@@ -1,46 +1,44 @@
+using Microsoft.Extensions.Options;
+using RateLimiter.Configuration;
 using RateLimiter.Interfaces;
 
 namespace RateLimiter.Implementations;
 
 /// <summary>
-/// Token bucket rate limiter - TODO: Implement this!
-/// 
-/// The token bucket algorithm allows for bursty traffic while maintaining
-/// an average rate limit. Tokens are added to a bucket at a fixed rate.
+/// Token bucket rate limiter - backward compatibility wrapper.
+/// For new code, use TokenBucketStrategy directly or RateLimiterFactory.
 /// </summary>
 public class TokenBucket : IRateLimiter
 {
-    private readonly int _capacity;
-    private readonly double _refillRate;
+    private readonly TokenBucketStrategy _strategy;
 
-    public TokenBucket(int capacity, double refillRate)
+    public TokenBucket(IOptions<RateLimiterOptions> options)
     {
-        _capacity = capacity;
-        _refillRate = refillRate;
-        // TODO: Initialize your data structures
+        _strategy = new TokenBucketStrategy(options);
     }
 
     public Task<bool> TryConsumeAsync(int permits = 1, CancellationToken cancellationToken = default)
     {
-        // TODO: Implement token consumption logic
-        throw new NotImplementedException();
+        return _strategy.TryConsumeAsync(permits, cancellationToken);
     }
 
     public Task<int> GetAvailablePermitsAsync(CancellationToken cancellationToken = default)
     {
-        // TODO: Return current available tokens
-        throw new NotImplementedException();
+        return _strategy.GetAvailablePermitsAsync(cancellationToken);
     }
 
     public Task<TimeSpan> GetWaitTimeAsync(int permits = 1, CancellationToken cancellationToken = default)
     {
-        // TODO: Calculate wait time for permits
-        throw new NotImplementedException();
+        return _strategy.GetWaitTimeAsync(permits, cancellationToken);
     }
 
     public Task ResetAsync(CancellationToken cancellationToken = default)
     {
-        // TODO: Reset the bucket state
-        throw new NotImplementedException();
+        return _strategy.ResetAsync(cancellationToken);
     }
+
+    /// <summary>
+    /// Gets the current token count (for testing/debugging purposes)
+    /// </summary>
+    public double CurrentTokens => _strategy.CurrentTokens;
 } 
